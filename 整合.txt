@@ -1,0 +1,13 @@
+- CRF HMM 区别和联系
+- 介绍一下 AUC
+- 手写 KMeans
+- attention的本质是什么
+- 奥卡姆剃刀原则及什么时候是必要的
+- 介绍一下深度可分离卷积和其应用
+- Mobilenet的三个版本的区别
+- Inception的四个版本的区别
+- Dropout 在训练和测试中的区别
+- 编程题：LeetCode 213
+- 编程题：LeetCode 325
+- 编程题：LeetCode 38
+- 编程题：LeetCode 564
