@@ -1,13 +1,18 @@
-1、Python 深拷贝，浅拷贝
+1、Python 深拷贝，浅拷贝的区别， Python2 3的区别
 2、python的反射机制
-3、用过的python包
-    sklern、numpy、panda -- pandas的索引是干啥的
-	
-（1）装饰器？
-（2）类方法&实例方法？
-（3）生成器？
-（4）如何遍历Python的list？
-（5）使用迭代器遍历和非迭代器遍历区别？
-（6）如何自己实现迭代器？
+3、Python的装饰器
+4、python 类 的继承和多态
+5、Python中的self关键字
+6、Python is 和 ==的区别
+7、mutable/immutable可变对象与不可变对象
+8.Python的内存管理机制，优缺点，Python如何实现垃圾回收（引用计数）
+9、元祖和tupe区别，list和tuple各自的优势，tuple和list的区别（只读和读写），元祖和字典遍历
+    Python中 List 函数的底层代码怎么实现的？
+10、介绍一下python中闭包的作用
+11、Python的多线程和多进程，Python伪多线程，那什么时候应该用它？
+12、readline和readlines的区别
+13、tensorflow while_loop和python for循环的区别，什么情况下for更优？（while loop的循环次数不确定的情况下效率低，因为要不断重新建图）
+14、列表去重，字典排序
 
-Python的内存回收机制
+
+

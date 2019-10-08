@@ -1,0 +1,65 @@
+- 介绍常见的边缘检测算法
+
+- 介绍 MTCNN网络，有哪些层，卷积核大小和数量对模型的影响
+- 输入图像灰度值对模型的影响，为什么要把0-255转化成0-1？
+- 神经网络如果没有激活函数还能解决线性不可分问题吗？
+- 如果F1已经趋于平稳，如何在保持F1稳定的前提下提高precision，降低recall；
+- 卷积操作是线性的吗？CNN是线性的吗？为什么？（激活函数）常用的激活函数？
+- 
+- BERT 的attention和普通的attention的区别
+- 公式及讲解soft attention，hard attention，multi head attention
+
+- 介绍 RNN LSTM 和 GRU
+- 介绍 RNN 的反向传播
+- LSTM里面 为什么有些激活函数用sigmoid，有些用tanh？
+- LSTM 里面有哪些门，为什么用这些门？
+- LSTM与RNN的区别
+- LSTM 详细结构与RNN相比如何解决梯度消失与爆炸
+- lstm和RNN对于哪些问题题更擅长？
+- LSTM减弱梯度消失的原理
+- LSTM 的改进点有哪些？
+- LSTM里面有哪些门，为什么用这些门？
+
+- transformer和RNN的区别
+
+
+- 常用颜色空间
+- 手写灰度直方图代码
+
+增强学习
+- offerpolicy 和 onpolicy 的区别
+NLP
+- 介绍深度语言模型：BERT、ELMO、Transformer-XL等
+
+- 介绍一下 attention机制，transfomer机制
+- Transformer的结构是什么样的？
+- Transformer Decoder端的输入具体是什么？
+- Transformer是如何训练的？测试阶段如何进行测试呢？
+
+- PyTorch 多gpu训练机制的原理，优化器以及网络参数保存机制
+- BLSTM 和 LSTM 区别
+
+- Stacking原理，还有怎么调优？
+- DQN 损失函数是什么？
+
+- Tensorflow的动态图和静态图有什么区别
+- GN，BN，LN，IN 它们的共性和特性
+
+
+ 给定一个N*C*H*W的张量，给出均值和标准差的计算公式，然后得到均值和标准差之后的是如何操作的？训练和测试阶段的异同。
+ 
+ 
+
+2、GAN相关。描述、介绍优缺点、知道哪些variant、WGAN的优点和不足、conditionalGAN的应用场景
+
+工程上如何对卷积操作进行优化？答：傅立叶模拟卷积。大佬不满意，说那是cudnn早就实现的，还有什么优化吗？（确实不知道，甩锅给工程组）
+样本不均衡怎么处理？一个batch类别均等采样，修改loss对不同样本的权重。
+扯到了tripleLoss，大佬问样本怎么选择？随机，然后就被大佬嫌弃了。装逼失败，这块确实没怎么深入研究。
+为什么用multiLoss？多loss权重如何选？训练普通的模型使其收敛，打印反向传播梯度的大小，这表示该task的难度，以此作为loss的权重，然后我补充说了下可以搞一个动态的loss权重，根据一段时间窗口来决定loss的权重。
+
+
+
+3. 你认为目前video和知识蒸馏这两个方向的挑战和可以改进的地方在哪
+4. RNN为什么long-term dependency做不好
+5. 你用了Memory Network，有提升吗
+6. 你觉得网络模型和硬件平台是什么关系
