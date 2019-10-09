@@ -13,6 +13,7 @@
 12、readline和readlines的区别
 13、tensorflow while_loop和python for循环的区别，什么情况下for更优？（while loop的循环次数不确定的情况下效率低，因为要不断重新建图）
 14、列表去重，字典排序
+15、Python基础，list每隔两个取一个元素（我说直接for循环，面试官问更快速的方式，面试结束后我才想起来可能是列表推导式，主要是我忘了列表推导比for循环更快😣）。
 
 
 
