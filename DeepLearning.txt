@@ -1,5 +1,7 @@
 深度学习相关：
 1、-- 图片检测、识别、分割的区别 
+--手推梯度反向传播
+--介绍熟悉的NAS网络
 2、-- CNN
     （1）BP 手推反向传播，cnn怎么更新w值和反向传播
     （2）CNN反向传播细节，怎么过全联接层、池化层、卷积层
@@ -18,6 +20,7 @@
    
 4、--（1）Max Pooling和 Average Pooling的区别，使用场景分别是什么？
      （2） CNN Maxpooling 怎么反向传播？
+	 （3）哪些情况用 MaxPool比AveragePool效果好？原因
 
 
 5、-- （1）ROC曲线和AUC曲线， 手写AUC的计算， auc比F1好在哪
@@ -62,6 +65,7 @@
       （1）Dropout 的原理。为什么能防止过拟合？具体实现
       （2）Dropout 前向和反向的处理
 	  （3）dropout在训练和测试时不同，怎么保证测试结果稳定
+	  （4）BFE 和 Dropout的关系
  
 14、-- 怎么解决样本不均衡（重点考核损失函数优化，正负样本不均衡时的解决方案）
 
@@ -95,8 +99,8 @@ Faster-rcnn 相关
 
 
 
-
   -- YOLOV1~V3系列介绍，以及每一版的改进，优缺点介绍。yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
+  - YOLOv3在小缺陷检测上也很好，RPN上和two-stage的有什么区别
   -- SSD、yolo、Fast RCNN 的区别，
       RPN怎么计算 box 的实际坐标
 	  为什么回归损失中用smooth L1 (faster-rcnn)
@@ -114,9 +118,12 @@ Faster-rcnn 相关
   -- Focal loss， OHEM（online Hard example mining）到底比focal loss差再哪里了
      Focal Loss是如何进行难分样本挖掘的
   -- 介绍常见的 Anchor free 目标检测算法
+  -- 介绍Anchor based 和Anchor free目标检测网络的优缺点
   -- 介绍 anchor-based和anchor-free两者的优缺点
   -- ResNet相关。描述、介绍特点、介绍为什么效果不会随着深度变差、提了一下V2的区别
      ResNet 主要研究了什么问题
+  - 介绍目标检测中的多尺度训练/测试？
+  - 为什么 DenseNet 比 ResNet 更耗显存？
   
  
 扩展问题
@@ -133,6 +140,7 @@ Faster-rcnn 相关
   -- 语义分割中CRF的作用
   -- HMM 和 CRF的区别
   -- CRF 怎么训练的（传统+深度学习）
+  -- 为什么深度学习中的图像分割要先编码再解码？
 
 
   -- 剪枝压缩，些精简网络 （tplink）
@@ -148,6 +156,9 @@ Faster-rcnn 相关
  -- 例如计算flops，卷积维度变换的公式推导，卷积是如何编程实现的；
  -- pytorch中多卡训练的过程是怎样的？说下gather scatter是怎么做的？
  -- 设计一个在CNN卷积核上做dropout的方式
+ -- PyTorch的高效convolution实现
+ -- Python中不可变和可变数据类型
+ -- PyTorch 不用库函数如何实现多机多卡
  . 
 
 就项目中数据处理方式做了详细的询问，生成的多张数据集如何使用，缺失值的处理需要考察到哪些问题，均值填充是否科学等
