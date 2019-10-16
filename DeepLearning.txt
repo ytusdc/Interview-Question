@@ -33,7 +33,7 @@
      （6）除了池化层还有什么方法可以减少特征数量（这里他提到了UNet模型，之前有看过，就说出来了，是采样的方法）
 
 
-5、-- （1）ROC曲线和AUC曲线， 手写AUC的计算， auc比F1好在哪
+5、-- （1）ROC曲线和AUC曲线， 手写AUC的计算， 介绍F1-score, auc比F1好在哪
       （2）精确率，召回率，和准确度评价怎么算，这俩是矛盾的怎么选最优
 	    （3）分类、检测、分割评价指标说一下？
       （4）AUC和交叉熵在分类上的区别与联系
@@ -53,7 +53,7 @@
 	  （3）损失函数正则项的本质是什么?（惩罚回归，约束极值，超参数不可求扔掉常数项.）
     （4）损失函数 （MSE /huber loss/cross entropy/指数损失 ）
     （5）样本不均衡怎么搞（重点考核损失函数优化）
-    （6）为什么分类用交叉熵而不用MSE？ 
+    （6）为什么分类用交叉熵而不用MSE？ 交叉熵介绍
       思路：（ https://blog.csdn.net/scythe666/article/details/78393821 用 MSE 计算 loss 的问题在于，通过 Softmax 输出的曲线是波动的，有很多局部的极值点。 即，非凸优化问题 (non-convex)，而 cross entropy 计算 loss，则依旧是一个凸优化问题，用梯度下降求解时，凸优化问题有很好的收敛特性。https://blog.csdn.net/liuweiyuxiang/article/details/90707375 )
       （）loss不降怎么办；vali loss不升（过拟合）怎么办
 
