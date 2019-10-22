@@ -12,3 +12,19 @@
 - 入职之后在哪个项目组，项目是新成立还是已有的？
 - 公司是否有技术分享交流活动？有的话，多久一次呢？
 
+
+腾讯/百度/滴滴/快手/顺丰/拼多多/依图/OPPO/搜狗/华为
+方向：DL/ML/NLP/CV
+
+- 手撕 SoftNMS代码
+- 介绍一下 CRF的原理
+- 单目视觉如何测量深度？
+- ORB-SLAM的初始化步骤
+- Python的装饰器@的用法
+- 手撕快排和堆排序（最小堆）
+- LR为什么用交叉熵作为loss函数
+- 介绍 word2vec 和 fasttext 的区别
+- 介绍一下XGboost、LightGBM和GBDT
+- Leetcode上的hard算法题：求最小编辑距离
+- XGboost的loss函数的推导（mse以及非mse形式），以及求解推导。
+
