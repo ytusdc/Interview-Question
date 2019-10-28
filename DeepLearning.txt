@@ -39,14 +39,19 @@
 	    （3）分类、检测、分割评价指标说一下？
       （4）AUC和交叉熵在分类上的区别与联系
       （5）Log Loss 和 AUC 的区别 
+	  （6）分类常见的指标有什么，如何理解AUC？
 
 6、--（1）解释 L0、L1、L2正则化，L1，L2正则化原理（L1是假设参数服从拉普拉斯分布，L2是假设参数服从高斯分布）
+      - l1 l2 是什么，起什么效果，从参数分布和参数图上解释
      （2）L1，L2的区别，L1为什么能使特征稀疏(（L1范数，使权重为0，对应的特征则不起作用，使特征稀疏）稀疏矩阵)  L2为什么不能，L2为什么能解决（或者减轻）过拟合
      （3）L1在x=0出不可导，怎么办？
+	 （4）Lasso、线性回归、逻辑回归、l1 l2 正则有什么影响，口述一下l1参数分布的推导（牛皮）, l1在0处不可导是怎么处理的:利用坐标轴下降法或者proximal operator：http://roachsinai.github.io/2016/08/03/1Proximal_Method/
 
 7、-- （1）Softmax计算公式，什么情况下要使用它，梯度公式推导，反向传播 和代码实现 ，softmax 的求导，反向传播
       （2）介绍分层 softmax，还有负采样？怎么负采样？
-	    （3）为什么softmax是指数形式
+	  （3）为什么softmax是指数形式
+	  （4）Softmax的公式和伪代码
+	  （5）LR + softmax做多分类和LR + multiLoss 做多分类区别在哪里
 	  
 8、-- 损失函数（Loss）
     （1）常用的 Loss 函数， cross entropy的原理是什么？反向传播机制是什么？
@@ -58,6 +63,7 @@
       思路：（ https://blog.csdn.net/scythe666/article/details/78393821 用 MSE 计算 loss 的问题在于，通过 Softmax 输出的曲线是波动的，有很多局部的极值点。 即，非凸优化问题 (non-convex)，而 cross entropy 计算 loss，则依旧是一个凸优化问题，用梯度下降求解时，凸优化问题有很好的收敛特性。https://blog.csdn.net/liuweiyuxiang/article/details/90707375 )
     （7）loss不降怎么办；vali loss不升（过拟合）怎么办
     (8)有哪些loss函数，有什么区别
+	 （9）交叉熵的公式伪代码
 
 9、-- 批归一化Batch Normalization原理
       （1）BN 层的原理，优化过程，优化的是什么， 为什么BN有泛化能力的改善. 
@@ -70,6 +76,7 @@
       （6）BN、LN、IN、GN原理及适用场景
       （7）作用1.使得输入规范化到有梯度的区间，防止梯度消失。 2.改变输入数据的均值和方差，起到数据增强的作用，防止过拟合
       （8）关于BN防止过拟合的分析 https://blog.csdn.net/qq_23150675/article/details/79452685
+	  （6）Batch normalization, instance normalization, layer normalization和Group normalization谈一下
 	  
 10、--各种激活函数的优缺点
       （1）各种激活函数介绍一下，优缺点及适用场景
@@ -85,6 +92,7 @@
       （3）梯度下降现在为什么用的少
       （4）loss优化的几个方法（sgd、动量、adam）
       （5）动量法的表达式，随机梯度下降相比全局梯度下降好处是什么
+	   （6）解决梯度消失一般都用什么损失函数
   
 12、- 过拟合、欠拟合（overfitting,underfitting）的原因及解决方法
 
@@ -230,6 +238,15 @@ Faster-rcnn 相关
 
 自注意力机制， Attention
 
+
+ 介绍一下调参的经验，这个需要自己总结
+ 介绍你读到的19年 Anchor-free 目标检测论文
+ - 256*256*3 -> 128*128*64的卷积，stride，padding和待优化的参数有多少
+ 如果网络初始化为0的话有什么问题
+ 讲一下调参的经验，lasso有什么参数要调，你在观测到什么情况会对lasso的参数做什么调整
+ 讲一下论文的模型，输出是什么，交叉熵表示什么含义，用了什么优化算法，adam和SGD的关系、batch size和epoch的平衡
+ CNN的模型了解多少，有什么优势
+ 卷积运算乘法运算次数
 
 
 时间片t的计算依赖t-1时刻的计算结果，这样限制了模型的并行能力；
