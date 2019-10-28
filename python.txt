@@ -1,6 +1,6 @@
 1、Python 深拷贝，浅拷贝的区别， Python2 3的区别
 2、python的反射机制
-3、Python的装饰器
+3、Python的装饰器@的用法
 4、python 类 的继承和多态
 5、Python中的self关键字
 6、Python is 和 ==的区别

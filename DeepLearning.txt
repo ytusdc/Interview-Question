@@ -177,7 +177,7 @@ Faster-rcnn 相关
 分割：
   -- deeplab v3如何改进，训练过程
   -- 介绍金字塔池化，ASPP，深度可分，带孔卷积， PSPNet中PSP
-  -- 语义分割中CRF的作用
+  -- 语义分割中CRF的作用,介绍一下 CRF的原理
   -- HMM 和 CRF的区别
   -- CRF 怎么训练的（传统+深度学习）
   -- 为什么深度学习中的图像分割要先编码再解码？
@@ -192,6 +192,7 @@ Faster-rcnn 相关
 --- code 编程
  -- 卷积底层的实现方式（如caffe里面的img2col）
  -- NMS IoU 描述
+ -- 手撕 SoftNMS代码
  -- 编程题，写目标检测里的NMS和IoU
  -- nms很耗时吗？ 时间复杂度？ 一般预测时会有多少个候选框？
  -- numpy实现交叉熵
