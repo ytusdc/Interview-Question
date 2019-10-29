@@ -27,6 +27,7 @@
   - 样本不平衡对svm的影响（几乎没有）
   - 讲一下SMO算法
   - SVM 需不需要做 normalization
+  - SVM的KTT条件？说了说，说到SMO实在说不下去了
   
 
 -- LR (逻辑回归) +  SVM
