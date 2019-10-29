@@ -41,36 +41,7 @@
       （4）AUC和交叉熵在分类上的区别与联系
       （5）Log Loss 和 AUC 的区别 
 	  （6）分类常见的指标有什么，如何理解AUC？
-
-6、--（1）解释 L0、L1、L2正则化，L1，L2正则化原理（L1是假设参数服从拉普拉斯分布，L2是假设参数服从高斯分布）
-      - l1 l2 是什么，起什么效果，从参数分布和参数图上解释
-     （2）L1，L2的区别，L1为什么能使特征稀疏(（L1范数，使权重为0，对应的特征则不起作用，使特征稀疏）稀疏矩阵)  L2为什么不能，L2为什么能解决（或者减轻）过拟合
-     （3）L1在x=0出不可导，怎么办？
-	    （4）Lasso、线性回归、逻辑回归、l1 l2 正则有什么影响，口述一下l1参数分布的推导（牛皮）, l1在0处不可导是怎么处理的:利用坐标轴下降法或者proximal operator：http://roachsinai.github.io/2016/08/03/1Proximal_Method/
-
-7、--（1）Softmax计算公式，什么情况下要使用它，梯度公式推导，反向传播 和代码实现 ，softmax 的求导，反向传播
-     （2）介绍分层 softmax，还有负采样？怎么负采样？
-	   （3）为什么softmax是指数形式
-	   （4）Softmax的公式和伪代码
-	   （5）LR + softmax做多分类和LR + multiLoss 做多分类区别在哪里
-     （6）softmax、多个logistic的各自的优势？
-     （7）推了下softmax反向传播的公式，来对比两者的优劣。
-
-
 	  
-8、-- 损失函数（Loss）
-    （1）常用的 Loss 函数， cross entropy的原理是什么？反向传播机制是什么？
-	  （2）Loss不收敛的原因和解决方法
-	  （3）损失函数正则项的本质是什么?（惩罚回归，约束极值，超参数不可求扔掉常数项.）
-    （4）损失函数 （MSE /huber loss/cross entropy/指数损失 ）
-    （5）样本不均衡怎么搞（重点考核损失函数优化）
-    （6）为什么分类用交叉熵而不用MSE？ 交叉熵介绍
-      思路：（ https://blog.csdn.net/scythe666/article/details/78393821 用 MSE 计算 loss 的问题在于，通过 Softmax 输出的曲线是波动的，有很多局部的极值点。 即，非凸优化问题 (non-convex)，而 cross entropy 计算 loss，则依旧是一个凸优化问题，用梯度下降求解时，凸优化问题有很好的收敛特性。https://blog.csdn.net/liuweiyuxiang/article/details/90707375 )
-    （7）loss不降怎么办；vali loss不升（过拟合）怎么办
-    (8)有哪些loss函数，有什么区别
-	 （9）交叉熵的公式伪代码
-     (10)多标签分类怎么解决，从损失函数角度考虑
-
 9、-- 批归一化Batch Normalization原理
       （1）BN 层的原理，优化过程，优化的是什么， 为什么BN有泛化能力的改善. 
 	    （2）BN层怎么具体实现的，最好是能写出公式
@@ -83,10 +54,36 @@
       （7）作用1.使得输入规范化到有梯度的区间，防止梯度消失。 2.改变输入数据的均值和方差，起到数据增强的作用，防止过拟合
       （8）关于BN防止过拟合的分析 https://blog.csdn.net/qq_23150675/article/details/79452685
 	  （6）Batch normalization, instance normalization, layer normalization和Group normalization谈一下
+
+6、--（1）Softmax计算公式，什么情况下要使用它，梯度公式推导，反向传播 和代码实现 ，softmax 的求导，反向传播
+     （2）介绍分层 softmax，还有负采样？怎么负采样？
+	   （3）为什么softmax是指数形式
+	   （4）Softmax的公式和伪代码
+	   （5）LR + softmax做多分类和LR + multiLoss 做多分类区别在哪里
+     （6）softmax、多个logistic的各自的优势？
+     （7）推了下softmax反向传播的公式，来对比两者的优劣。
+
+7、-- 损失函数（Loss）
+    （1）常用的 Loss 函数 （MSE /huber loss/cross entropy/指数损失 ） 
+	（2）cross entropy的原理是什么？反向传播机制是什么？交叉熵的公式伪代码
+	（3）Loss不收敛的原因和解决方法
+    （4）损失函数正则项的本质是什么?
+    （5）样本不均衡怎么搞（重点考核损失函数优化 focal loss）
+    （6）为什么分类用交叉熵而不用MSE（均方误差）？ 
+    （7）loss不降怎么办；vali loss不升（过拟合）怎么办
+	（9）多标签分类怎么解决，从损失函数角度考虑
+	
+	
+8、--（1）解释 L0、L1、L2正则化，L1，L2正则化原理（L1是假设参数服从拉普拉斯分布，L2是假设参数服从高斯分布）
+      - l1 l2 是什么，起什么效果，从参数分布和参数图上解释
+     （2）L1，L2的区别，L1为什么能使特征稀疏(（L1范数，使权重为0，对应的特征则不起作用，使特征稀疏）稀疏矩阵)
+	 （3）L2为什么不能，L2为什么能解决（或者减轻）过拟合
+     （3）L1在x=0出不可导，怎么办？
+	  （4）Lasso、线性回归、逻辑回归、l1 l2 正则有什么影响，口述一下l1参数分布的推导（牛皮）, l1在0处不可导是怎么处理的:利用坐标轴下降法或者proximal operator：http://roachsinai.github.io/2016/08/03/1Proximal_Method/
 	  
 10、--各种激活函数的优缺点
       （1）各种激活函数介绍一下，优缺点及适用场景
-	    （2）比如sigmod的问题在哪里，relu是怎么解决的，relu的问题在哪里，有没有对应的解决算法（prelu），介绍 Leaky Relu 并写公式 leakyrelu解决了梯度消失问题吗
+	   （2）比如sigmod的问题在哪里，relu是怎么解决的，relu的问题在哪里，有没有对应的解决算法（prelu），介绍 Leaky Relu 并写公式 leakyrelu解决了梯度消失问题吗
 	    （3）深度学习用relu激励函数，为什么，好处是什么
       （4）relu激励函数训练数据时会让神经元失活，训练之后进行应用时有什么注意的吗，训练时失活的神经元在应用时怎么办
       （5）sigmoid，tanh，ReLU, leaky ReLU, PReLU, ELU，random ReLU
@@ -95,7 +92,7 @@
 	 
 11、-- 梯度消失和梯度爆炸：
       （1）梯度消失与梯度爆炸原因？解决方案
-	    （2）从数学层面分析一下
+	  （2）从数学层面分析一下
       （3）梯度下降现在为什么用的少
       （4）loss优化的几个方法（sgd、动量、adam）
       （5）动量法的表达式，随机梯度下降相比全局梯度下降好处是什么
@@ -144,8 +141,6 @@ Faster-rcnn 相关
    （8）Faster-rcnn中使用的哪个基础神经网络模型，VGG还是ResNet? 
    （9）RCNN系列模型的区别
     
-
-
 
   -- YOLOV1~V3系列介绍，以及每一版的改进，优缺点介绍。yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
   -- Anchor大小、长宽比选取？我说了业界常用的方法(YOLO9000中的方法)，并提了一个更优的方法
