@@ -103,8 +103,8 @@
 13、- Dropout
       （1）Dropout 的原理。为什么能防止过拟合？具体实现
       （2）Dropout 前向和反向的处理
-	    （3）dropout在训练和测试时不同，怎么保证测试结果稳定
-	    （4）BFE 和 Dropout的关系
+	  （3）dropout在训练和测试时不同，怎么保证测试结果稳定
+	  （4）BFE 和 Dropout的关系
       （5）dropout的随机因子会对结果的损失有影响吗
        (6) Dropout是失活神经元还是失活连接
   
@@ -145,11 +145,11 @@ Faster-rcnn 相关
   -- YOLOV1~V3系列介绍，以及每一版的改进，优缺点介绍。yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
   -- Anchor大小、长宽比选取？我说了业界常用的方法(YOLO9000中的方法)，并提了一个更优的方法
   -- 如果YOLOV3采用Focal loss会怎么样？
-  - YOLOv3在小缺陷检测上也很好，RPN上和two-stage的有什么区别
+  -- YOLOv3在小缺陷检测上也很好，RPN上和two-stage的有什么区别
   -- SSD、yolo、Fast RCNN 的区别，
-      RPN怎么计算 box 的实际坐标
-	    为什么回归损失中用smooth L1 (faster-rcnn)
-	-- yolov2中聚类是怎么做的。
+  -- RPN怎么计算 box 的实际坐标
+  -- 为什么回归损失中用smooth L1 (faster-rcnn)
+  -- yolov2中聚类是怎么做的。
   -- yolo跟ssd的损失函数是什么样，有啥缺点，yolo和ssd中正样本怎么确定的 
   -- FPN结构 
   -- 目标检测中，如果检测到的目标较小时，框向内缩，该怎么解决
@@ -171,7 +171,6 @@ Faster-rcnn 相关
   -- 介绍 anchor-based和anchor-free两者的优缺点
   -- ResNet相关。描述、介绍特点、介绍为什么效果不会随着深度变差、提了一下V2的区别
      ResNet V2 主要研究了什么问题, resnet缺点
-  -- ResNet、ResNext
   - 介绍目标检测中的多尺度训练/测试？
   - 为什么 DenseNet 比 ResNet 更耗显存？
   - 一个类似多标签训练的问题，他的loss是怎么算
@@ -211,9 +210,7 @@ Faster-rcnn 相关
 
 --- code 编程
  -- 卷积底层的实现方式（如caffe里面的img2col）
- -- NMS IoU 描述
- -- 手撕 SoftNMS代码
- -- 编程题，写目标检测里的NMS和IoU
+ -- 手撕 IoU,NMS,SoftNMS代码
  -- nms很耗时吗？ 时间复杂度？ 一般预测时会有多少个候选框？
  -- numpy实现交叉熵
  -- 例如计算flops，卷积维度变换的公式推导，卷积是如何编程实现的；
