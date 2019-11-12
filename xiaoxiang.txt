@@ -1,0 +1,47 @@
+小象课程
+
+数据样本不均衡条件下：
+调参指标不能用accuraty ，因为本身就不平衡，
+应该用auc（常用）或者f1-score
+
+数据不均衡可能导致 overfit，怎么解决
+
+auc物理含义 对正样本预估的概率 大于 对负样本预估的概率 的概率
+
+
+微调 fine-tune  学习率  10 （-4，-5，-6）都可以
+
+    重新训练  前几个epoc  用10（ -2 ）几个 epoc 10（-3）
+	
+	
+	
+	
+优化器怎么调 
+
+
+tf 多卡训练用哪个API
+
+
+tf 小模型小网络用，因为tf 是静态的
+
+大型网络用py 动态的
+
+
+opencv 霍夫变换 小波变换 等了解原理
+
+Deformable Convolutional 可变卷积
+
+
+过拟合/欠拟合
+
+正则化
+
+LR/sigmod（图）/梯度下降 
+
+树模型（了解）
+
+Bagging Boosting（了解）
+
+BN，FPN， RPN，focal loss，softmax损失函数和推导 反向传播
+momentum Adagrad， adam（会多于冗余参数，有一些参数虽然不用了，但是依然会保存）， sgd（用的多，参数少，收敛块） 优化器选择
+网络调参技巧
