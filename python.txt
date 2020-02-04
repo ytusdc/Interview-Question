@@ -23,6 +23,6 @@ Python和C++的区别
 -  Python里面的lambda表达式写一下，随便写一个
 - Python里面的三元运算符写一下 （x = 1 if x> y else 0）
 - 字典树 python
-
+- Python中的对象(Object)和C++中的对象有什么区别
 
 
