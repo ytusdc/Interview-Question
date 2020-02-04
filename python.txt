@@ -1,6 +1,9 @@
-1、Python 深拷贝，浅拷贝的区别， Python2 3的区别
+1、Python  直接赋值, 深拷贝，浅拷贝的区别， Python2 3的区别  
+
+https://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.html
+
 2、python的反射机制
-3、Python的装饰器@的用法
+3、Python的装饰器@的用法,装饰器用途和作用
 4、python 类 的继承和多态
 5、Python中的self关键字
 6、Python is 和 ==的区别
