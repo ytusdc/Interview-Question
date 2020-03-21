@@ -9,7 +9,7 @@ https://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.ht
 6、Python is 和 ==的区别
 7、mutable/immutable可变对象与不可变对象
 8.Python的内存管理机制，优缺点，Python如何实现垃圾回收（引用计数）
-9、元祖和tupe区别，list和tuple各自的优势，tuple和list的区别（只读和读写），元祖和字典遍历
+9、元组：list和tuple各自的优势，tuple和list的区别（只读和读写），元祖和字典遍历
     Python中 List 函数的底层代码怎么实现的？
 10、介绍一下python中闭包的作用
 11、Python的多线程和多进程，Python伪多线程，那什么时候应该用它？
@@ -27,5 +27,4 @@ Python和C++的区别
 - Python里面的三元运算符写一下 （x = 1 if x> y else 0）
 - 字典树 python
 - Python中的对象(Object)和C++中的对象有什么区别
-
 
