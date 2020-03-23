@@ -144,11 +144,11 @@
 
 Faster-rcnn 相关
    	(1) 项目中使用Faster rcnn，请问Faster rcnn的优势是什么，为什么在这个项目使用Faster rcnn
-   	(2) Faster-rcnn RPN的作用和原理
+   	(2) Faster-rcnn RPN的作用和原理，RPN怎么计算 box 的实际坐标
    	(3) ROI pooling 的主要作用是什么？RoI pooling和RoI align区别
    	(4) Faster rcnn anchor机制，分别说一下 RPN阶段两种Loss分别是什么？faster-rcnn 损失函数，优化函数
-   	(5) faster-rcnn 为什么可以图片不同尺寸输入
-   	(6) Faster-rcnn有什么不足的地方吗？如何改进？fasterrcnn怎么优化
+   	(5) Faster-rcnn 为什么可以图片不同尺寸输入 --- ROI pooling
+   	(6) Faster-rcnn有什么不足的地方吗？如何改进？faster-rcnn怎么优化
    	(7) 模型调参，fastrcnn内部怎么实现，rpn分几层，怎么调节参数
    	(8) Faster-rcnn中使用的哪个基础神经网络模型，VGG还是ResNet? 
    	(9) RCNN系列模型的区别
@@ -161,19 +161,18 @@ Faster-rcnn 相关
   -- 如果YOLOV3采用Focal loss会怎么样？
   -- YOLOv3在小缺陷检测上也很好，RPN上和two-stage的有什么区别
   -- SSD、yolo、Fast RCNN 的区别，
-  -- RPN怎么计算 box 的实际坐标
   -- 为什么回归损失中用smooth L1 (faster-rcnn) 
   -- yolov2中聚类是怎么做的。
   -- yolo跟ssd的损失函数是什么样，有啥缺点，yolo和ssd中正样本怎么确定的 
   -- FPN结构 
   -- 目标检测中，如果检测到的目标较小时，框向内缩，该怎么解决
   -- 目标检测中如何解决目标尺度大小不一的情况 (图像金字塔，特征金字塔，Inception block) 
-  -- CornerNet介绍，CornerPooling是怎么做的，怎么解决cornernet检测物体合并为一个框的问题  
+  
   -- MobileNet v1 v2 介绍和区别，MobileNetV2中1x1卷积作用
   -- MobileNet V2中的Residual结构最先是哪个网络提出来的，MobileNetV2 module的参数量和FLOPs计算
   -- shufflenet 算法题：random_shuffle的实现
 
-
+  -- CornerNet介绍，CornerPooling是怎么做的，怎么解决cornernet检测物体合并为一个框的问题  
   -- CenterNet具体是如何工作的，介绍一下其损失函数
   -- 分类网络样本不均衡怎么办？
   -- Inception(V1-V4) 网络结构以及优缺点
@@ -185,10 +184,10 @@ Faster-rcnn 相关
   -- 介绍 anchor-based和anchor-free两者的优缺点
   -- ResNet相关。描述、介绍特点、介绍为什么效果不会随着深度变差
      ResNet V2 主要研究了什么问题, resnet缺点
-  - 为什么 DenseNet 比 ResNet 更耗显存？
-  - 介绍目标检测中的多尺度训练/测试？
-  - 一个类似多标签训练的问题，他的loss是怎么算
-  - 在训练网络过程中怎么共享反向梯
+  -- 为什么 DenseNet 比 ResNet 更耗显存？
+  -- 介绍目标检测中的多尺度训练/测试？
+  -- 一个类似多标签训练的问题，他的loss是怎么算
+  -- 在训练网络过程中怎么共享反向梯
   
  
 扩展问题
