@@ -122,6 +122,10 @@
     -- 如果把不平衡的训练集(正负样本1：3) 通过降采样平衡后，那么对于平衡后的AUC值和预测概率值有怎样的变化；
 	
 	类别不平衡怎么解决的？
+	  -- 分类网络样本不均衡怎么办？
+	
+	-- 目标检测中，如果检测到的目标较小时，框向内缩，该怎么解决
+    -- 目标检测中如何解决目标尺度大小不一的情况 (图像金字塔，特征金字塔，Inception block)
 
 15、- 深度学习常用的optimizer(优化器) 
 	(1) SGD每步做什么，为什么能online learning
@@ -137,7 +141,7 @@
 18、- 数据增强{
 	(1) 现在有10000个数据集，怎么在现有条件下扩大训练数据集，前提在现有数据集的基础上，不去重新采集数据
     (2) 数据增强做了哪些
-
+ 
 
 
 目标检测
@@ -153,38 +157,44 @@ Faster-rcnn 相关
    	(8) Faster-rcnn中使用的哪个基础神经网络模型，VGG还是ResNet? 
    	(9) RCNN系列模型的区别
    	(10) Faster R-CNN网络做了哪些改进/优化
+    (11) 为什么回归损失中用smooth L1 (faster-rcnn) 
     
 
   -- YOLOV1~V3系列介绍，以及每一版的改进，优缺点介绍。yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
   -- YOLO中如何通过 K-Means 得到 anchor boxes？
+  -- yolov2中聚类是怎么做的
   -- Anchor大小、长宽比选取？我说了业界常用的方法(YOLO9000中的方法) ，并提了一个更优的方法
   -- 如果YOLOV3采用Focal loss会怎么样？
   -- YOLOv3在小缺陷检测上也很好，RPN上和two-stage的有什么区别
-  -- SSD、yolo、Fast RCNN 的区别，
-  -- 为什么回归损失中用smooth L1 (faster-rcnn) 
-  -- yolov2中聚类是怎么做的。
+  -- SSD、yolo、Fast RCNN 的区别。
   -- yolo跟ssd的损失函数是什么样，有啥缺点，yolo和ssd中正样本怎么确定的 
   -- FPN结构 
-  -- 目标检测中，如果检测到的目标较小时，框向内缩，该怎么解决
-  -- 目标检测中如何解决目标尺度大小不一的情况 (图像金字塔，特征金字塔，Inception block) 
   
+  
+  -- ResNet相关。描述、介绍特点、介绍为什么效果不会随着深度变差
+     ResNet V2 主要研究了什么问题, resnet缺点
+  -- 为什么 DenseNet 比 ResNet 更耗显存？
+  
+  
+  -- RetinaNet 介绍， Focal loss， OHEM(online Hard example mining) 到底比focal loss差再哪里了
+	 如何解决前景背景数量不均衡
+     Focal Loss是如何进行难分样本挖掘的
+	 Focal Loss 与 GHM
+
+
+  -- Inception(V1-V4) 网络结构以及优缺点
   -- MobileNet v1 v2 介绍和区别，MobileNetV2中1x1卷积作用
   -- MobileNet V2中的Residual结构最先是哪个网络提出来的，MobileNetV2 module的参数量和FLOPs计算
   -- shufflenet 算法题：random_shuffle的实现
 
-  -- CornerNet介绍，CornerPooling是怎么做的，怎么解决cornernet检测物体合并为一个框的问题  
-  -- CenterNet具体是如何工作的，介绍一下其损失函数
-  -- 分类网络样本不均衡怎么办？
-  -- Inception(V1-V4) 网络结构以及优缺点
-  -- RetinaNet 介绍， Focal loss， OHEM(online Hard example mining) 到底比focal loss差再哪里了
-     Focal Loss是如何进行难分样本挖掘的
-     如何解决前景背景数量不均衡(OHEM，focal loss，前景过采样，2stage模型) 
+
+
   -- 介绍常见的 Anchor free 目标检测算法
   -- 介绍Anchor based 和Anchor free目标检测网络的优缺点
   -- 介绍 anchor-based和anchor-free两者的优缺点
-  -- ResNet相关。描述、介绍特点、介绍为什么效果不会随着深度变差
-     ResNet V2 主要研究了什么问题, resnet缺点
-  -- 为什么 DenseNet 比 ResNet 更耗显存？
+  -- CornerNet介绍，CornerPooling是怎么做的，怎么解决cornernet检测物体合并为一个框的问题  
+  -- CenterNet具体是如何工作的，介绍一下其损失函数
+
   -- 介绍目标检测中的多尺度训练/测试？
   -- 一个类似多标签训练的问题，他的loss是怎么算
   -- 在训练网络过程中怎么共享反向梯
