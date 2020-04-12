@@ -50,14 +50,14 @@
 	(2) BN层怎么具体实现的，最好是能写出公式
 	(3) BN 训练，测试区别，是怎么做的，bn如何在inference是加速(权重合并：可以融合到卷积里，因为test时，bn是一个线性模型，卷积也是线性的) 
     (4) BN在inference的时候用到的mean和var怎么来的：类似于滑动平均
-    () BN跨卡训练怎么保证相同的mean和var， 问了面试官是SYNC
+        BN跨卡训练怎么保证相同的mean和var， 问了面试官是SYNC
     (4) BN有哪些需要学习的参数
     (5) 除了BN，你还知道那些其他的加速收敛的方法(楼主说到了归一化) ，和BN差不多的那些你了解吗？(GN, IN, FN他们的共性和特性) 
     (6) BN、LN、IN、GN原理及适用场景
 	   -- BN和GN的区别？各有什么优缺点？
     (7) 作用1.使得输入规范化到有梯度的区间，防止梯度消失。 2.改变输入数据的均值和方差，起到数据增强的作用，防止过拟合
     (8) 关于BN防止过拟合的分析 https://blog.csdn.net/qq_23150675/article/details/79452685
-	(6) Batch normalization, instance normalization, layer normalization和Group normalization谈一下
+
 
 6、--
 	(1) Softmax计算公式，什么情况下要使用它，梯度公式推导，反向传播 和代码实现 ，softmax 的求导，反向传播
