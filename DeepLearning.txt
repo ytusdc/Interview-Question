@@ -12,6 +12,7 @@
     (3)  CNN 如何保持平移方向不变性
     (4)  CNN是深度深好还是长宽大好
     (5)  DNN反向传播公式推导
+	(6)  CNN的平移不变性是什么？如何实现的？
 	
 3、-- 卷积相关
 	(1) 1 * 1卷积核的作用，哪些情况可以使用1x1卷积？
@@ -46,7 +47,7 @@
 	(6) 分类常见的指标有什么，如何理解AUC？
 	  
 9、-- 批归一化Batch Normalization原理
-	(1) BN 层的原理，优化过程，优化的是什么， 为什么BN有泛化能力的改善. 
+	(1) BN 层的原理，优化过程，优化的是什么，为什么BN有泛化能力的改善. 
 	(2) BN层怎么具体实现的，最好是能写出公式
 	(3) BN 训练，测试区别，是怎么做的，bn如何在inference是加速(权重合并：可以融合到卷积里，因为test时，bn是一个线性模型，卷积也是线性的) 
     (4) BN在inference的时候用到的mean和var怎么来的：类似于滑动平均
@@ -60,6 +61,7 @@
 
 
 6、--
+    (1) Softmax的原理是什么？有什么作用？
 	(1) Softmax计算公式，什么情况下要使用它，梯度公式推导，反向传播 和代码实现 ，softmax 的求导，反向传播
     (2) 介绍分层 softmax，还有负采样？怎么负采样？
 	(3) 为什么softmax是指数形式
@@ -88,15 +90,16 @@
 	(4) Lasso、线性回归、逻辑回归、l1 l2 正则有什么影响，口述一下l1参数分布的推导(牛皮) , l1在0处不可导是怎么处理的:利用坐标轴下降法或者proximal operator：http://roachsinai.github.io/2016/08/03/1Proximal_Method/
 	  
 10、--各种激活函数的优缺点
-	(1) 各种激活函数介绍一下，优缺点及适用场景
+	(1) 激活函数有什么用？各种激活函数介绍一下，优缺点及适用场景
 	(2) 比如sigmod的问题在哪里，relu是怎么解决的，relu的问题在哪里，有没有对应的解决算法(prelu) ，介绍 Leaky Relu 并写公式 leakyrelu解决了梯度消失问题吗
 	(3) 深度学习用relu激励函数，为什么，好处是什么
 	(4) relu激励函数训练数据时会让神经元失活，训练之后进行应用时有什么注意的吗，训练时失活的神经元在应用时怎么办
 	(5) sigmoid，tanh，ReLU, leaky ReLU, PReLU, ELU，random ReLU
-	(6)   激活函数 除了 Sigmoid tanh ReLU 还有什么介绍一下？
+	(6) 激活函数 除了 Sigmoid tanh ReLU 还有什么介绍一下？
 	(7) 凸优化了解吗？牛顿法、SGD、最小二乘法，各自的优势。
 	(8) ReLU有哪些变体？
 	(9) 介绍一下你经常用的optimize
+	(10) 介绍常见的梯度下降优化方法
 	 
 11、-- 梯度消失和梯度爆炸：
 	(1) 梯度消失与梯度爆炸原因？解决方案
@@ -169,11 +172,15 @@ Faster-rcnn 相关
   -- SSD、yolo、Fast RCNN 的区别。
   -- yolo跟ssd的损失函数是什么样，有啥缺点，yolo和ssd中正样本怎么确定的 
   -- FPN结构 
+  -- Faster RCNN和SSD有啥不同，为啥SSD快？(不做Region Proposal，one-stage的) 
   
   
   -- ResNet相关。描述、介绍特点、介绍为什么效果不会随着深度变差
      ResNet V2 主要研究了什么问题, resnet缺点
+  -- 残差网络为什么能解决梯度消失的问题
+  -- LSTM为什么能解决梯度消失/爆炸的问题
   -- 为什么 DenseNet 比 ResNet 更耗显存？
+  -- skip connection有什么好处？推了下反向传播公式，根据链式法则，梯度可以直接作用于浅层网络。
   
   
   -- RetinaNet 介绍， Focal loss， OHEM(online Hard example mining) 到底比focal loss差再哪里了
@@ -181,19 +188,24 @@ Faster-rcnn 相关
      Focal Loss是如何进行难分样本挖掘的
 	 Focal Loss 与 GHM
 
-
+  -- VGG，GoogleNet，ResNet等网络之间的区别是什么？
   -- Inception(V1-V4) 网络结构以及优缺点
   -- MobileNet v1 v2 介绍和区别，MobileNetV2中1x1卷积作用
   -- MobileNet V2中的Residual结构最先是哪个网络提出来的，MobileNetV2 module的参数量和FLOPs计算
   -- shufflenet 算法题：random_shuffle的实现
 
-
+   
+   
+   
+  ---- Anchor-free 目标检测-----
 
   -- 介绍常见的 Anchor free 目标检测算法
   -- 介绍Anchor based 和Anchor free目标检测网络的优缺点
   -- 介绍 anchor-based和anchor-free两者的优缺点
   -- CornerNet介绍，CornerPooling是怎么做的，怎么解决cornernet检测物体合并为一个框的问题  
   -- CenterNet具体是如何工作的，介绍一下其损失函数
+  
+ 
 
   -- 介绍目标检测中的多尺度训练/测试？
   -- 一个类似多标签训练的问题，他的loss是怎么算
@@ -231,6 +243,19 @@ Faster-rcnn 相关
   -- 代码：mIOU(图像分割的通用评估指标) 的代码实现，使用numpy(我直接用了python) 
 
 
+
+
+----自注意力机制， Attention-----
+
+  -- Attention对比RNN和CNN，分别有哪点你觉得的优势
+  -- 写出Attention的公式
+  -- Attention机制，里面的q,k,v分别代表什么
+  -- 为什么self-attention可以替代seq2seq
+
+
+
+
+
 --- code 编程
  -- 卷积底层的实现方式(如caffe里面的img2col) 
  -- 手撕 IoU,NMS,SoftNMS代码
@@ -256,65 +281,49 @@ Faster-rcnn 相关
 - 单阶段比双阶段难训练？
 - 数据清洗方面有什么优化的想法
 - 模型加速的方法：答：network pruning和dw conv --shufflenet和mobilenet
-- Focal Loss 为什么目标检测中提出，对分类真的有用吗，这个类似于开放性问题，交流了一下对于focalloss的理解，因为目标检测中一是类别不均衡，二是负例易分，所以focalloss有用，但是对于分类值得商讨。
+- Focal Loss 为什么目标检测中提出，对分类真的有用吗，这个类似于开放性问题，交流了一下对于focalloss的理解，因为目标检测中一是类别不均衡,二是负例易分，所以focal loss有用，但是对于分类值得商讨。
 
 
-就项目中数据处理方式做了详细的询问，生成的多张数据集如何使用，缺失值的处理需要考察到哪些问题，均值填充是否科学等
-- 
-
-
-问了FCOS和SSD之间的速度等的对比
-
-自注意力机制， Attention
 
 ---实际操作相关
 
  介绍一下调参的经验，这个需要自己总结
  如何训练模型、调优
      根据需求(前向传播时间、模型大小) ，确定模型和基础网络，跑第一版模型。(举了个栗子) 
-
      判断模型是否出现过拟合的情况，来决定下一步的优化方向。
+     结果分析(confusionMatrix等) ，分析问题，将论文中的方法套上去，如果没有自己创造。(又举了个栗子) 
 
-      结果分析(confusionMatrix等) ，分析问题，将论文中的方法套上去，如果没有自己创造。(又举了个栗子) 
- 介绍你读到的19年 Anchor-free 目标检测论文
  - 256*256*3 -> 128*128*64的卷积，stride，padding和待优化的参数有多少
  如果网络初始化为0的话有什么问题
  讲一下调参的经验，lasso有什么参数要调，你在观测到什么情况会对lasso的参数做什么调整
  讲一下论文的模型，输出是什么，交叉熵表示什么含义，用了什么优化算法，adam和SGD的关系、batch size和epoch的平衡
- CNN的模型了解多少，有什么优势
- 卷积运算乘法运算次数
+
+
  零样本分类问题。如果测试时出现一个图片是训练时没有的类别，怎么做
+ 
  如何解决小目标： 为什么要深层、浅层featureMap concat？提了点细节和我踩的坑，需要数量级上的调整，不然深层的feature可能会被压制。
  Cascade的思想? 
- 搞backbone模型优化的，问了我怎么迭代基础网络的版本的
- skip connection有什么好处？推了下反向传播公式，根据链式法则，梯度可以直接作用于浅层网络。
+
+ 
 - 为什么mobileNet在理论上速度很快，工程上并没有特别大的提升？先说了卷积源码上的实现，两个超大矩阵相乘，可能是group操作，是一些零散的卷积操作，速度会慢。说应该从内存上去考虑。申请空间？
 
-为什么用multiLoss？多loss权重如何选？训练普通的模型使其收敛，打印反向传播梯度的大小，这表示该task的难度，以此作为loss的权重，然后我补充说了下可以搞一个动态的loss权重，根据一段时间窗口来决定loss的权重。
+为什么用multi Loss？多loss权重如何选？训练普通的模型使其收敛，打印反向传播梯度的大小，这表示该task的难度，以此作为loss的权重，然后我补充说了下可以搞一个动态的loss权重，根据一段时间窗口来决定loss的权重。
+就项目中数据处理方式做了详细的询问，生成的多张数据集如何使用，缺失值的处理需要考察到哪些问题，均值填充是否科学等
 
 
-
-
-
-
-Faster RCNN和SSD有啥不同，为啥SSD快？(不做Region Proposal，one-stage的) 
 
 训练加速有什么办法？(答加大batch size，或者先adam再SGD) 
 
 如果加大batch size需要调节哪些超参数(答加大learning rate，增加epoch) 
 
-
-
 基本的深度学习知识，CNN，RNN，SGD，BN，各种训练Trick，要熟悉
-
 时间片t的计算依赖t-1时刻的计算结果，这样限制了模型的并行能力；
 顺序计算的过程中信息会丢失，尽管LSTM等门机制的结构一定程度上缓解了长期依赖的问题，但是对于特别长期的依赖现象,LSTM依旧无能为力。
- lstm比rnn的好处，乘变加，梯度信息有
+LSTM比rnn的好处，乘变加，梯度信息有
 如何做pytorch的部署与热更新
-
 缺失值如何处理，什么情况下均值、众数，什么情况下丢弃特征。
+
 - 编程题：用 PyTorch写一下大致的train val的流程
-- numpy实现CNN
 
 
 --算法题:
@@ -323,45 +332,9 @@ Faster RCNN和SSD有啥不同，为啥SSD快？(不做Region Proposal，one-stag
 -- 二维的滑动窗口最大值问题，时间复杂度O(n)  n行向量，每个向量求滑动窗口大小为m的滑动窗口最大值，行之间无相关性，可并行。再计算列，同理O(n) , 整体时间复杂度O(n) 。
 
 
-
 如何将高维的变量映射到低维？
 
 总结：商汤的面试，非常注重基础，喜欢能说出自己想法的候选人，博主在面试中多次和面试官argue，比如在答第10题时，博主犹豫了一段时间，面试管提示：你听说过PCA降维吗， 这个问题可以通过PCA解决。我解释说，PCA并不能完全解决您的这个问题，因为PCA只能解除线性相关，无法解决高阶相关性，可以考虑Kernel PCA
-
-
-
-
-微信---2020/7/9 
-
-深度学习类：
-1.  你觉得batch-normalization过程是什么样的
-2.  激活函数有什么用？常见的激活函数的区别是什么？
-3.  Softmax的原理是什么？有什么作用？CNN的平移不变性是什么？如何实现的？
-4.  VGG，GoogleNet，ResNet等网络之间的区别是什么？
-5.  残差网络为什么能解决梯度消失的问题
-6.  LSTM为什么能解决梯度消失/爆炸的问题
-7.  Attention对比RNN和CNN，分别有哪点你觉得的优势
-8.  写出Attention的公式
-9.  Attention机制，里面的q,k,v分别代表什么
-10. 为什么self-attention可以替代seq2seq
-
-
-计算机视觉（CV）类：
-1.  常见的模型加速方法
-2.  目标检测里如何有效解决常见的前景少背景多的问题
-3.  目标检测里有什么情况是SSD、YOLOv3、Faster R-CNN等所不能解决的，假设网络拟合能力无限强
-4.  ROIPool和ROIAlign的区别
-5.  介绍常见的梯度下降优化方法
-6.  Detection你觉的还有哪些可做的点
-7.  mini-Batch SGD相对于GD有什么优点
-8.  人体姿态估计主流的两个做法是啥？简单介绍下
-9.  卷积的实现原理以及如何快速高效实现局部weight sharing的卷积操作方式
-10. CycleGAN的生成效果为啥一般都是位置不变纹理变化，为啥不能产生不同位置的生成效果
-
-
-
-
-
 
 
 
