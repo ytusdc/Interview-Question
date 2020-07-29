@@ -4,7 +4,7 @@
 
 1、图片检测、识别、分割的区别 
 	-- 手推梯度反向传播
-	-- 介绍熟悉的NAS网络
+	-- 介绍熟悉的NASNet网络
 	-- 常用的凸优化方法，介绍
 2、CNN
 	(1)  BP 算法手推反向传播，cnn怎么更新w值和反向传播， 手推CNN公式
@@ -27,6 +27,8 @@
    	(11) 卷积层如何修剪，量化等
    	(12) 上采样方法，反卷积
    	(13) 空洞卷积如何实现
+    (14)deformable conv怎么做,具体怎么学的，对偏移有没有什么限制
+    (15)3x3conv，2x2pool，3x3conv后感受野计算
 	
 4、--池化的作用和种类
 	(1) Max Pooling和 Average Pooling的区别，使用场景分别是什么？
@@ -58,7 +60,7 @@
 	   -- BN和GN的区别？各有什么优缺点？
     (7) 作用1.使得输入规范化到有梯度的区间，防止梯度消失。 2.改变输入数据的均值和方差，起到数据增强的作用，防止过拟合
     (8) 关于BN防止过拟合的分析 https://blog.csdn.net/qq_23150675/article/details/79452685
-
+    (9) 如果数据不是高斯分布，bn后怎么恢复
 
 6、--
     (1) Softmax的原理是什么？有什么作用？
@@ -82,7 +84,7 @@
 	
 	
 8、--
-	(1) 解释 L0、L1、L2正则化，L1，L2正则化原理(L1是假设参数服从拉普拉斯分布，L2是假设参数服从高斯分布) 
+	(1) 解释 L0、L1、L2正则化，L1，L2正则化原理(L1是假设参数服从拉普拉斯分布，L2是假设参数服从高斯分布) ，怎么选择
       - l1 l2 是什么，起什么效果，从参数分布和参数图上解释
     (2) L1，L2的区别，L1为什么能使特征稀疏((L1范数，使权重为0，对应的特征则不起作用，使特征稀疏) 稀疏矩阵) 
 	(3) L2为什么不能，L2为什么能解决(或者减轻) 过拟合
@@ -110,7 +112,7 @@
 	(6) 解决梯度消失一般都用什么损失函数
 	(7) ResNet如何解决梯度消失？公式写一下
   
-12、- 过拟合、欠拟合(overfitting,underfitting) 的原因及解决方法
+12、- 过拟合、欠拟合(overfitting,underfitting) 的原因及解决方法,解释为什么有效
 
 13、- Dropout
 	(1) Dropout 的原理。为什么能防止过拟合？具体实现
@@ -175,12 +177,19 @@ Faster-rcnn 相关
   -- Faster RCNN和SSD有啥不同，为啥SSD快？(不做Region Proposal，one-stage的) 
   
   
+  
+ 
   -- ResNet相关。描述、介绍特点、介绍为什么效果不会随着深度变差
      ResNet V2 主要研究了什么问题, resnet缺点
   -- 残差网络为什么能解决梯度消失的问题
+  -- resnet两种结构具体怎么实现，bottleneck的作用，为什么可以降低计算量，resnet参数量和模型大小
   -- LSTM为什么能解决梯度消失/爆炸的问题
-  -- 为什么 DenseNet 比 ResNet 更耗显存？
   -- skip connection有什么好处？推了下反向传播公式，根据链式法则，梯度可以直接作用于浅层网络。
+  -- 为什么 DenseNet 比 ResNet 更耗显存？
+  -- 相同层数，densenet和resnet哪个好，为什么？
+  -- ResNet解决了什么问题
+  -- 训练深层的神经网络，会遇到梯度消失和梯度爆炸（vanishing/exploding gradients）的问题，影响了网络的收敛，但是这很大程度已经被标准初始化（normalized   	   -- initialization）和BN（Batch Normalization）所处理。 当深层网络能够开始收敛，会引起网络退化（degradation problem）问题，即随着网络深度增加，准确率会饱和，甚至下降。这种退化不是由过拟合引起的，因为在适当的深度模型中增加更多的层反而会导致更高的训练误差。    ResNet就通过引入深度残差连接来解决网络退化的问题，从而解决深度CNN模型难训练的问题。
+
   
   
   -- RetinaNet 介绍， Focal loss， OHEM(online Hard example mining) 到底比focal loss差再哪里了
@@ -190,9 +199,11 @@ Faster-rcnn 相关
 
   -- VGG，GoogleNet，ResNet等网络之间的区别是什么？
   -- Inception(V1-V4) 网络结构以及优缺点
+  轻量化模型
   -- MobileNet v1 v2 介绍和区别，MobileNetV2中1x1卷积作用
   -- MobileNet V2中的Residual结构最先是哪个网络提出来的，MobileNetV2 module的参数量和FLOPs计算
   -- shufflenet 算法题：random_shuffle的实现
+  --深度可分离卷积 原理，为什么降低计算量，口述计算，减少了多少
 
    
    
@@ -283,10 +294,12 @@ Faster-rcnn 相关
 - 模型加速的方法：答：network pruning和dw conv --shufflenet和mobilenet
 - Focal Loss 为什么目标检测中提出，对分类真的有用吗，这个类似于开放性问题，交流了一下对于focalloss的理解，因为目标检测中一是类别不均衡,二是负例易分，所以focal loss有用，但是对于分类值得商讨。
 
-
+监督学习和非监督学习举例
 
 ---实际操作相关
 
+关于神经网络的调参顺序?
+ 如果训练集不平衡，测试集平衡，直接训练和过采样欠采样处理，哪个更好
  介绍一下调参的经验，这个需要自己总结
  如何训练模型、调优
      根据需求(前向传播时间、模型大小) ，确定模型和基础网络，跑第一版模型。(举了个栗子) 
