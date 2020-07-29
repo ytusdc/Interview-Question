@@ -32,12 +32,11 @@
 	
 4、--池化的作用和种类
 	(1) Max Pooling和 Average Pooling的区别，使用场景分别是什么？
-    (2) CNN Maxpooling 怎么反向传播？
-	(3) 哪些情况用 MaxPool比AveragePool效果好？原因
-    (4) 当出现一个大噪点时，用哪种池化更好
-    (5) pooling反向传播
+	(2) 哪些情况用 MaxPool比AveragePool效果好？原因
+    (3) pooling反向传播
+	(4) RoI Pooling和RoI Align区别
+	(5) 当出现一个大噪点时，用哪种池化更好
     (6) 除了池化层还有什么方法可以减少特征数量(这里他提到了UNet模型，之前有看过，就说出来了，是采样的方法) 
-	(7) RoI Pooling和RoI Align区别
 
 
 5、-- 
