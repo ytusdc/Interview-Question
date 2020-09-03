@@ -140,7 +140,7 @@
     -- 目标检测中如何解决目标尺度大小不一的情况 (图像金字塔，特征金字塔，Inception block)  https://www.cnblogs.com/E-Dreamer-Blogs/p/11442927.html
 
 Faster-rcnn 相关
-	(1) RCNN系列模型的区别， Faster R-CNN网络做了哪些改进/优化
+    (1) RCNN系列模型的区别， Faster R-CNN网络做了哪些改进/优化
    	(2) 项目中使用Faster rcnn，请问Faster rcnn的优势是什么，为什么在这个项目使用Faster rcnn
    	(3) Faster-rcnn RPN的作用和原理，RPN怎么计算 box 的实际坐标
    	(4) ROI pooling 的主要作用是什么（图片不同尺寸输入）？RoI pooling和RoI align区别
@@ -236,7 +236,7 @@ Faster-rcnn 相关
   -- 语义分割评价指标 Miou
   -- 串联与并联的ASPP都需画出。论文中认为这两种方式哪种更好？
       我答了并联更好，串联会产生Griding Efect。
-      问：如何避免Griding Efect
+      问：如何避免Griding Efect--网格效应
   -- 代码：mIOU(图像分割的通用评估指标) 的代码实现，使用numpy(我直接用了python) 
 
 
