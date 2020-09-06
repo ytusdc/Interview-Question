@@ -250,12 +250,15 @@ Faster-rcnn 相关
   -- 为什么self-attention可以替代seq2seq
 
 
+  -- 出现漏检、误检，怎么解决？
+  -- anchor-free和anchor-based的优缺点
 
 
 
 --- code 编程
  -- 卷积底层的实现方式(如caffe里面的img2col) 
  -- 手撕 IoU,NMS,SoftNMS代码
+ -- 解释mAP，具体怎么计算？
  -- nms很耗时吗？ 时间复杂度？ 一般预测时会有多少个候选框？
  -- numpy实现交叉熵
  -- 例如计算flops，卷积维度变换的公式推导，卷积是如何编程实现的；
