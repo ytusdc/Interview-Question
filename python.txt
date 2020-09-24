@@ -8,7 +8,7 @@ https://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.ht
 5、Python中的self关键字
 6、Python is 和 ==的区别
 7、mutable/immutable可变对象与不可变对象
-8.Python的内存管理机制，优缺点，Python如何实现垃圾回收（引用计数）
+8、Python的内存管理机制，优缺点，Python如何实现垃圾回收（引用计数）
 9、元组：list和tuple各自的优势，tuple和list的区别（只读和读写），元祖和字典遍历
     Python中 List 函数的底层代码怎么实现的？
 10、介绍一下python中闭包的作用
@@ -32,3 +32,5 @@ Python和C++的区别
 
 1.用numpy 实现  m*2 的矩阵中 每一组数（xi,yi） 与 n*2 的矩阵的每一组 (xj，yj) 的欧氏距离之和， 即有 m*n 组欧氏距离， 其中 i 从 0 到 m-1 , j 从 0 到 n-1.
 2.撕题——dfs求岛屿数量
+
+用numpy，pytorch，TensorFlow实现两个矩阵操作，不能用for循环（一个是给出两个矩阵，分别表示m个和n个向量，求第一个矩阵和第二个矩阵每个向量的夹角；二是求欧式距离）	

@@ -60,11 +60,12 @@
 	(3) 深度学习用relu激励函数，为什么，好处是什么
 	(2) 比如sigmod的问题在哪里，relu是怎么解决的，relu的问题在哪里，有没有对应的解决算法(prelu) ，介绍 Leaky Relu 并写公式 leakyrelu解决了梯度消失问题吗
 	(4) relu激励函数训练数据时会让神经元失活，训练之后进行应用时有什么注意的吗，训练时失活的神经元在应用时怎么办
+	(5) 推导sigmoid的求导
 
 	
 	
 8、--Softmax 相关
-    (1) Softmax的原理是？反向传播、梯度公式推导，代码实现
+    (1) Softmax的原理是？反向传播、梯度公式推导，代码实现， 手推softmax的BP公式
 	(2) 为什么softmax是指数形式
 	(3) LR + softmax做多分类区别
 	(4) softmax、多个logistic的各自的优势？
@@ -158,6 +159,7 @@ Faster-rcnn 相关
 
   -- YOLOV1~V3系列介绍，以及每一版的改进，优缺点介绍。yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
   -- YOLO中如何通过 K-Means 得到 anchor boxes？
+  -- YOLOv3中bbox坐标回归怎么做的？和Faster R-CNN有什么区别？
   -- yolov2中聚类是怎么做的
   -- Anchor大小、长宽比选取？我说了业界常用的方法(YOLO9000中的方法) ，并提了一个更优的方法
   -- 如果YOLOV3采用Focal loss会怎么样？
@@ -195,6 +197,7 @@ Faster-rcnn 相关
   -- MobileNet v1 v2 介绍和区别，MobileNetV2中1x1卷积作用
   -- MobileNet V2中的Residual结构最先是哪个网络提出来的，MobileNetV2 module的参数量和FLOPs计算
   -- shufflenet 算法题：random_shuffle的实现
+  -- 怎么shuffle
   --深度可分离卷积 原理，为什么降低计算量，口述计算，减少了多少
 
    
@@ -264,7 +267,7 @@ Faster-rcnn 相关
 
 --- code 编程
  -- 卷积底层的实现方式(如caffe里面的img2col) 
- -- 手撕 IoU,NMS, 及其变体 SoftNMS代码 
+ -- 手撕 IoU,NMS, 及其变体 SoftNMS代码
  -- 解释mAP，具体怎么计算？
  -- nms很耗时吗？ 时间复杂度？ 一般预测时会有多少个候选框？
  -- numpy实现交叉熵
@@ -350,3 +353,12 @@ LSTM比rnn的好处，乘变加，梯度信息有
 
 介绍三种图像插值方法
 介绍HOG算法
+
+ 项目中遇到过拟合的解决办法
+ 项目中使用数据增强的方式
+ 训练数据类别样本不平衡的解决办法
+ 
+  TensorRT
+ ONNX
+ 
+ 手写Resnet的跳转连接(pytorch)，以类的形式封装好，后续别的网络模块可直接调用
