@@ -82,6 +82,8 @@
 	(5) Loss不降、不收敛的原因和解决方法
 	(6) 损失函数正则项的本质是什么?
 	(7) 样本不均衡怎么搞(重点考核损失函数优化 focal loss) 
+	(8) 分割网络的损失函数
+
    
 	  
 10、-- 批归一化Batch Normalization原理
@@ -145,6 +147,8 @@
 
 	-- 目标检测中，如果检测到的目标较小时，框向内缩，该怎么解决
     -- 目标检测中如何解决目标尺度大小不一的情况 (图像金字塔，特征金字塔，Inception block)  https://www.cnblogs.com/E-Dreamer-Blogs/p/11442927.html
+	-- 目标检测算法中多尺度训练/测试是怎么实现的? 
+	-- bbox目标大小尺寸差异巨大怎么解决？损失函数上怎么设计？
 
 Faster-rcnn 相关
     (1) RCNN系列模型的区别， Faster R-CNN网络做了哪些改进/优化
@@ -160,6 +164,7 @@ Faster-rcnn 相关
   -- YOLOV1~V3系列介绍，以及每一版的改进，优缺点介绍。yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
   -- YOLO中如何通过 K-Means 得到 anchor boxes？
   -- YOLOv3中bbox坐标回归怎么做的？和Faster R-CNN有什么区别？
+  --  YOLOv3中bbox坐标回归中的sigmoid函数有什么用？
   -- yolov2中聚类是怎么做的
   -- Anchor大小、长宽比选取？我说了业界常用的方法(YOLO9000中的方法) ，并提了一个更优的方法
   -- 如果YOLOV3采用Focal loss会怎么样？
