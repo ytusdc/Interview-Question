@@ -12,7 +12,11 @@
     (3)  CNN的平移不变性是什么？如何实现的？CNN网络中的不变性理解
     (4)  CNN是深度深好还是长宽大好
     (5)  DNN反向传播公式推导
-	
+
+     upsample 上采样方法
+	1、up-sampling--（Billnear intrpolation双线性插值）
+        2、Transpose Conv （反卷积）
+        3、Up-Pooling
 	
 3、-- 卷积相关
    	(1) 1 * 1卷积核的作用，哪些情况可以使用1x1卷积？
