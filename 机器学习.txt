@@ -73,6 +73,8 @@
 -- 介绍随机森林和GBDT的区别 为什么Bagging降方差，Boosting降偏差？
 
 
+
+--介绍KNN和K-means
 -- Kmeans的缺点？如何改善？
 -- 讲一下K-means算法的过程以及原理
 -- K-Means 聚类这种方法一定会收敛嘛？如果不收敛，怎么办？
