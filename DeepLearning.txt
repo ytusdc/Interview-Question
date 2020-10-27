@@ -13,7 +13,7 @@
     (4)  CNN是深度深好还是长宽大好
     (5)  DNN反向传播公式推导
 
-     upsample 上采样方法
+     upsample 上采样方法(语义分割)
 	1、up-sampling--（Billnear intrpolation双线性插值）
         2、Transpose Conv （反卷积）
         3、Up-Pooling
@@ -202,6 +202,7 @@ Faster-rcnn 相关
   -- SSD、yolo、Fast RCNN 的区别。
   -- yolo跟ssd的损失函数是什么样，有啥缺点，yolo和ssd中正样本怎么确定的 
   -- FPN结构 
+  --  YOLOv4和YOLOv5有哪些区别？
   -- Faster RCNN和SSD有啥不同，为啥SSD快？(不做Region Proposal，one-stage的) 
   
  
