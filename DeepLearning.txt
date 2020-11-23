@@ -123,6 +123,7 @@
 	(8) bn的可训练参数 
 	(9) BN和普通的Normalization的区别
 	(10) BN放在激活函数前后有什么区别？
+	(11) BN的gama  labada意义
 
 
 12、- Dropout
@@ -288,9 +289,14 @@ Anchor-free 目标检测-----
   -- 为什么self-attention可以替代seq2seq
   -- Attention里面的QKV都是什么，怎么计算的
   -- 写一下Self-attention公式，Attention机制
-  -- 介绍Transformer的原理
-  -- Channel Attention怎么实现的？	
+  -- Channel Attention怎么实现的？
+  -- 介绍BERT/Transformer原理
+  -- 谈谈 Soft Attention，Attention 中需要先线性变换么？  
+  -- 介绍有监督、自监督和半监督
 
+
+
+训练深度学习网络时候，出现Nan是什么原因，怎么才能避免？
 
 
 场景分析--
