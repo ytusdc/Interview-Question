@@ -9,7 +9,7 @@ https://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.ht
 6、Python is 和 ==的区别
 7、mutable/immutable可变对象与不可变对象
 8、Python的内存管理机制，优缺点，Python如何实现垃圾回收（引用计数）
-9、元组：list和tuple各自的优势，tuple和list的区别（只读和读写），元祖和字典遍历
+9、list和tuple各自的优势，tuple和list的区别（只读和读写），元祖和字典遍历
     Python中 List 函数的底层代码怎么实现的？
 10、介绍一下python中闭包的作用
 11、Python的多线程和多进程，Python伪多线程，那什么时候应该用它？
@@ -21,7 +21,12 @@ https://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.ht
 17、python有什么常用的数据类型--- 列表、元组、字典、集合
 18、值传递和索引传递
 
+19、说一下Python的多线程和多进程，Python伪多线程，那什么时候应该用它？
+20、 tensorflow while_loop和python for循环的区别，什么情况下for更优？（while loop的循环次数不确定的情况下效率低，因为要不断重新建图）
+
 - python中不可变和可变 数据类型
+
+
 Python和C++的区别
 编程：
 
