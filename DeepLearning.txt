@@ -15,8 +15,8 @@
 
      upsample 上采样方法(语义分割)
 	1、up-sampling--（Billnear intrpolation双线性插值）
-        2、Transpose Conv （反卷积）
-        3、Up-Pooling
+    2、Transpose Conv （反卷积）
+    3、Up-Pooling
 	
 3、-- 卷积相关
    	(1) 1 * 1卷积核的作用，哪些情况可以使用1x1卷积？
@@ -49,11 +49,12 @@
 
 5、-- 
 	(1) 精确率，召回率，和准确度评价怎么算，这俩是矛盾的怎么选最优
-	(2) ROC曲线和AUC曲线，介绍F1-score, auc比F1好在哪
+	(2) ROC曲线和AUC曲线意义，介绍F1-score, auc比F1好在哪
 	(3) auc比F1好在哪-- ROC曲线 vs Precision-Recall曲线，各自的使用场景选择
 	(4) Log Loss 和 AUC 的区别， 适用于什么场景
 	(5) 分类、检测、分割评价指标说一下？
 	(6) 手写AUC曲面面积的计算(或者伪代码)
+	(7) 混淆矩阵
 	
 	
 6、--各种激活函数的优缺点
@@ -100,7 +101,7 @@
 	
 10、- 深度学习常用的optimizer(优化器) 
 	(1) 介绍一下你经常用的optimize
-	(2) 凸优化了解吗？牛顿法、SGD、最小二乘法，各自的优势。
+	(2) 凸优化了解吗？牛顿法、SGD、最小二乘法，各自的优势。---  SGD与牛顿法的区别在哪？
 	(3) loss优化的几个方法(sgd、动量、adam) 
 	(4) Adam优化器的迭代公式
 	(5) 动量法的表达式，随机梯度下降相比全局梯度下降好处是什么
@@ -191,7 +192,7 @@ Faster-rcnn 相关
     (9)  原始图片中的RoI如何映射到到feature map？
     
 
-  -- YOLOV1~V3系列介绍，以及每一版的改进，优缺点介绍。yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
+  -- YOLOV1~V4系列介绍，以及每一版的改进，优缺点介绍（越细越好）。yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
   -- YOLO中如何通过 K-Means 得到 anchor boxes？
   -- YOLOv3中bbox坐标回归怎么做的？和Faster R-CNN有什么区别？
   -- YOLOv3中bbox坐标回归中的sigmoid函数有什么用？
@@ -295,6 +296,10 @@ Anchor-free 目标检测-----
   -- 介绍有监督、自监督和半监督
 
 
+
+transformer中的Q,K,V到底是什么？
+介绍视觉Transformer及代表性网络
+神经网络节点太多如何加快计算？
 
 训练深度学习网络时候，出现Nan是什么原因，怎么才能避免？
 
