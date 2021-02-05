@@ -25,7 +25,8 @@ https://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.ht
 20、 tensorflow while_loop和python for循环的区别，什么情况下for更优？（while loop的循环次数不确定的情况下效率低，因为要不断重新建图）
 
 - python中不可变和可变 数据类型
-
+python里的多线程，怎么让它占满核呢？
+Python多线程、多进程
 
 Python和C++的区别
 编程：
