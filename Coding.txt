@@ -80,10 +80,14 @@
 - 给两个有序数组，求第K大的数（第k大）
 - 算法：数组求第k小数字的下标
 - 寻找两个有序数组的中位数（LeetCode04），思路按照求第K小的思路实现
+https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xun-zhao-liang-ge-you-xu-shu-zu-de-zhong-wei-s-114/
+https://zhuanlan.zhihu.com/p/67542731
 
 - 统计一个文本中的出现次数最多的k个单词（LeetCode 692--前K个高频单词）
 - 前 K 个高频元素	（LeetCode347）
 - 数组中出现最多的元素
+- 数组中出现次数超过一半的数字
+https://www.jianshu.com/p/14e003748ca2
 
 
 - 编程题：找出数组中两数之和为指定值的所有整数对，时间复杂度为O(n)
@@ -194,7 +198,7 @@
 - 第一题（Medium）：最接近的三数之和 https://leetcode-cn.com/problems/3sum-closest/solution/
 
 
-- 智力题：有100个球,甲乙轮流拿,每次最多拿5个,甲先拿,怎么拿能保证最后一个球是甲的.、
+- 智力题：有100个球,甲乙轮流拿,每次最多拿5个,甲先拿,怎么拿能保证最后一个球是甲的
     只要甲倒数第二次拿完后,剩下的个数是6个,那么不管乙怎么拿,胜利一定是甲
 	除去这6个，那么还剩94个，甲先拿，那甲先拿4个。剩余90个，6 的倍数。然后不管乙拿几个（x），甲拿 6-x个
     所以当乙先拿完后,甲再拿保证乙拿完后剩下的是6的倍数,那么甲一定胜利
