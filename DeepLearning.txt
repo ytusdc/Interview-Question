@@ -2,7 +2,7 @@
 
 卷积输出计算，卷积核参数数量
 
-1、   图片检测、识别、分割的区别 ---- 进神经网络时第一个不同是，识别可以resize但是检测对位置敏感不能resize（传统上说，现在可以resize，但是记住缩放信息，能够还原）
+1、图片检测、识别、分割的区别 ---- 进神经网络时第一个不同是，识别可以resize但是检测对位置敏感不能resize（传统上说，现在可以resize，但是记住缩放信息，能够还原）
 	-- 手推梯度反向传播
 	-- 介绍熟悉的NASNet网络
 	-- 常用的凸优化方法，介绍
@@ -16,11 +16,7 @@
 	(5)  CNN 模型所需的计算力（flops）和参数（parameters）数量是怎么计算的？
 	
 
-	上采样、下采样还有哪些类型
-     upsample 上采样方法(语义分割)
-	1、up-sampling--（Billnear intrpolation双线性插值）
-    2、Transpose Conv （反卷积）
-    3、Up-Pooling
+
 	
 	
 3、-- 卷积相关
@@ -35,10 +31,16 @@
    	(9) 卷积层如何修剪，量化等
 	(10) deformable conv怎么做,具体怎么学的，对偏移有没有什么限制
 	(11) 卷积神经网络的卷积核为什么是方形？为什么是奇数
-   	(12) 上采样方法，反卷积
-   	(13) 空洞卷积如何实现
-	(14) 反卷积具体怎么实现的？
-	(15) 卷积核大小一般如何设定？为什么
+   	(12) 空洞卷积如何实现
+	(13) 卷积核大小一般如何设定？为什么
+	(14) 上采样方法，反卷积
+    (15) 反卷积具体怎么实现的？
+	
+	上采样、下采样还有哪些类型
+    upsample 上采样方法(语义分割)
+	1、up-sampling--（Billnear intrpolation双线性插值）， 临近插值
+    2、Transpose Conv （反卷积）
+    3、Up-Pooling
 
  
 	
@@ -181,33 +183,34 @@
 
 	 
 
-目标检测
+目标检测 + 小目标检测
 
-	-- 目标检测中，如果检测到的目标较小时，框向内缩，该怎么解决
-    -- 目标检测中如何解决目标尺度大小不一的情况 (图像金字塔，特征金字塔，Inception block)  https://www.cnblogs.com/E-Dreamer-Blogs/p/11442927.html
+
 	-- 目标检测算法中多尺度训练/测试是怎么实现的? 
 	-- bbox目标大小尺寸差异巨大怎么解决？损失函数上怎么设计？
 	-- 介绍一下目标检测中的多尺度训练/测试
-	-- 如何提高小目标检测？
-	
-小目标检测
+    -- 目标检测中如何解决目标尺度大小不一的情况 (图像金字塔，特征金字塔，Inception block)  
+    
+	-- 如何提高小目标检测？  https://www.cnblogs.com/E-Dreamer-Blogs/p/11442927.html
 	-- 小目标检测有哪些trick
-    -- 小目标不好检测，有试过其他的方法吗？比如裁剪图像进行重叠
 
 Faster-rcnn 相关
-        FPN的前向预测过程，为什么fpn对于多尺度的目标能比较好的适应
+
     (1) RCNN系列模型的区别， Faster R-CNN网络做了哪些改进/优化
    	(2) 项目中使用Faster rcnn，请问Faster rcnn的优势是什么，为什么在这个项目使用Faster rcnn
    	(3) Faster-rcnn RPN的作用和原理，RPN怎么计算 box 的实际坐标
-   	(4) ROI pooling 的主要作用是什么（图片不同尺寸输入）？
+	(4) 原始图片中的RoI如何映射到到feature map？    https://zhuanlan.zhihu.com/p/24780433
+   	(5) ROI pooling 的主要作用是什么（图片不同尺寸输入）？
 	    RoI Pooling和RoI Align区别, 顺便介绍三种图像插值方法
-   	(5) Faster rcnn anchor机制，分别说一下 RPN阶段两种Loss分别是什么？
-   	(6) faster-rcnn 损失函数，优化函数
-   	(7) Faster-rcnn有什么不足的地方吗？如何改进？faster-rcnn怎么优化
-    (8) 为什么回归损失中用smooth L1 (faster-rcnn) 
-    (9)  原始图片中的RoI如何映射到到feature map？
-    
+   	(6) Faster rcnn anchor机制，分别说一下 RPN阶段两种Loss分别是什么？
+   	(7) faster-rcnn 损失函数，优化函数
+   	(8) Faster-rcnn有什么不足的地方吗？如何改进？faster-rcnn怎么优化
+    (9) 为什么回归损失中用smooth L1 (faster-rcnn) 
 
+    
+  -- SSD、yolo、Fast RCNN 的区别
+  -- Faster RCNN和SSD有啥不同，为啥SSD快？(不做Region Proposal，one-stage的) 
+  -- FPN结构， fpn对于多尺度的目标能比较好的适应
   -- YOLOV1~V4系列介绍，以及每一版的改进，优缺点介绍（越细越好）。yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
   -- YOLO中如何通过 K-Means 得到 anchor boxes？
   -- YOLOv3中bbox坐标回归怎么做的？和Faster R-CNN有什么区别？
@@ -217,34 +220,24 @@ Faster-rcnn 相关
   -- Anchor大小、长宽比选取？我说了业界常用的方法(YOLO9000中的方法) ，并提了一个更优的方法
   -- 如果YOLOV3采用Focal loss会怎么样？
   -- YOLOv3在小缺陷检测上也很好，RPN上和two-stage的有什么区别
-  -- SSD、yolo、Fast RCNN 的区别。
   -- yolo跟ssd的损失函数是什么样，有啥缺点，yolo和ssd中正样本怎么确定的 
-  -- FPN结构 
   -- YOLOv4相较于YOLOv3有哪些改进？速度更快还是更慢，为什么？
-  --  YOLOv4和YOLOv5有哪些区别？
-  -- Faster RCNN和SSD有啥不同，为啥SSD快？(不做Region Proposal，one-stage的) 
+  -- YOLOv4和YOLOv5有哪些区别？
 
 
-一些网络
-   PAnet PSPNet
+ResNet
+  -- ResNet相关。描述、介绍特点、介绍为什么效果不会随着深度变差,   
+  -- ResNet解决了什么问题
+  -- ResNet为什么能解决梯度消失的问题
+  -- 网络退化问题： 训练深层的神经网络，会遇到梯度消失和梯度爆炸（vanishing/exploding gradients）的问题，影响了网络的收敛，但是这很大程度已经被标准初始化（normalized  initialization）和BN（Batch Normalization）所处理。 当深层网络能够开始收敛，会引起网络退化（degradation problem）问题，即随着网络深度增加，准确率会饱和，甚至下降。这种退化不是由过拟合引起的，因为在适当的深度模型中增加更多的层反而会导致更高的训练误差。 ResNet就通过引入深度残差连接来解决网络退化的问题，从而解决深度CNN模型难训练的问题。
   
- 
-  -- ResNet相关。描述、介绍特点、介绍为什么效果不会随着深度变差,   -- ResNet解决了什么问题
-    -- 训练深层的神经网络，会遇到梯度消失和梯度爆炸（vanishing/exploding gradients）的问题，影响了网络的收敛，但是这很大程度已经被标准初始化（normalized  initialization）和BN（Batch Normalization）所处理。 当深层网络能够开始收敛，会引起网络退化（degradation problem）问题，即随着网络深度增加，准确率会饱和，甚至下降。这种退化不是由过拟合引起的，因为在适当的深度模型中增加更多的层反而会导致更高的训练误差。 ResNet就通过引入深度残差连接来解决网络退化的问题，从而解决深度CNN模型难训练的问题。
-  -- ResNet V2 主要研究了什么问题, resnet缺点
-  -- 残差网络为什么能解决梯度消失的问题
+  -- ResNet V2 主要研究了什么问题， ResNet的BN层位置
   -- resnet两种结构具体怎么实现，bottleneck的作用，为什么可以降低计算量，resnet参数量和模型大小
-  -- LSTM为什么能解决梯度消失/爆炸的问题
   -- skip connection有什么好处？---- 推了下反向传播公式，根据链式法则，梯度可以直接作用于浅层网络。
   -- 为什么 DenseNet 比 ResNet 更耗显存？
   -- 相同层数，densenet和resnet哪个好，为什么？
-  -- ResNet的BN层位置--- https://zhuanlan.zhihu.com/p/97557391
   
-  
-网络结构 --
-  -- VGG，GoogleNet，ResNet等网络之间的区别是什么？
-  -- Inception(V1-V4) 网络结构以及优缺点
-
+ 
 
 Fcoal loss
   -- Focal loss --
@@ -252,6 +245,7 @@ Fcoal loss
 	 如何解决前景背景数量不均衡
      Focal Loss是如何进行难分样本挖掘的，有多少超参数？如何调参？
 	 Focal Loss 与 GHM
+	 IOU， GIOU，DIOU
 
  
 轻量化模型
@@ -260,7 +254,7 @@ Fcoal loss
   -- shufflenet 算法题：random_shuffle的实现
   -- shuffle v1 v2 结构	
   -- 深度可分离卷积 原理，为什么降低计算量，口述计算，减少了多少
-  -- - 为什么mobileNet在理论上速度很快，工程上并没有特别大的提升？先说了卷积源码上的实现，两个超大矩阵相乘，可能是group操作，是一些零散的卷积操作，速度会慢。说应该从内存上去考虑。申请空间？
+  -- 为什么mobileNet在理论上速度很快，工程上并没有特别大的提升？先说了卷积源码上的实现，两个超大矩阵相乘，可能是group操作，是一些零散的卷积操作，速度会慢。说应该从内存上去考虑。申请空间？
 
    
    
@@ -271,7 +265,10 @@ Anchor-free 目标检测-----
   -- CenterNet具体是如何工作的，介绍一下其损失函数
   -- FCOS网络
  
-
+网络结构 --
+  -- VGG，GoogleNet，ResNet等网络之间的区别是什么？
+  -- Inception(V1-V4) 网络结构以及优缺点
+  -- PAnet PSPNet
   
 分割：
   -- FCN网络为什么用全卷积层代替全连接层？
@@ -301,38 +298,35 @@ Anchor-free 目标检测-----
   -- 最新的分割网络框架了解吗
   -- 为什么图像分割要先encode，再decode？
   
-  
-  u_net 上采样如何实现的？ https://www.zhihu.com/question/346865980/answer/830573301
-  Unet结构特点 上采样、下采样还有哪些类型
+ 
 
-下采样：resblock  上采样：PixelShuffle、临近插值、双线性插值
-
-
+  -- 介绍有监督、自监督和半监督
 
 自注意力机制， Attention-----
-  -- 介绍SENet中的注意力机制
+  -- 介绍SENet中的注意力机制 --  Channel Attention
   -- 介绍CV方向上的注意力网络
   -- Attention对比RNN和CNN，分别有哪点你觉得的优势
   -- 写出Attention的公式
   -- Attention机制，里面的q,k,v分别代表什么
+  -- 谈谈 Soft Attention，Attention 中需要先线性变换么？  
+
+
+  
+  -- 写一下Self-attention公式，Attention机制
   -- 为什么self-attention可以替代seq2seq
   -- Attention里面的QKV都是什么，怎么计算的
-  -- 写一下Self-attention公式，Attention机制
-  -- Channel Attention怎么实现的？
-  -- 介绍BERT/Transformer原理
-  -- 谈谈 Soft Attention，Attention 中需要先线性变换么？  
-  -- 介绍有监督、自监督和半监督
   -- 为什么Transformer中很少使用激活函数？
+介绍BERT/Transformer原理
+transformer中的Q,K,V到底是什么？
+介绍视觉Transformer及代表性网络
+Transformer中的Scaled Dot-Product Attention为什么要缩放（两点）。
+Transformer中的Position Embedding是怎么实现的？为什么？
 
 
 了解维度爆炸吗
-transformer中的Q,K,V到底是什么？
-
-Transformer中的Scaled Dot-Product Attention为什么要缩放（两点）。
-
-Transformer中的Position Embedding是怎么实现的？为什么？
-介绍视觉Transformer及代表性网络
 神经网络节点太多如何加快计算？
+  -- LSTM为什么能解决梯度消失/爆炸的问题
+
 
 训练深度学习网络时候，出现Nan是什么原因，怎么才能避免？
 - 如何解决训练集和测试集的分布差距过大问题？
