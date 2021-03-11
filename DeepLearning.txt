@@ -143,7 +143,7 @@
 	(10) BN放在激活函数前后有什么区别？
 	(11) BN的gama  labada意义
 	(12) 小batch size的坏处
-	BN前向、后向计算
+	     BN前向、后向计算
 	(13) ResNet 等模型中，Batch Normalization和Dropout 为什么不同时使用
 	
 	
@@ -334,8 +334,6 @@ pytorch 多卡训练 同步还是异步
 项目中用到图像的分辨率是多少
 --说下平时用到的深度学习的trick
 
-
-常用的loss及优缺点
 
 场景分析--
   -- 训练集loss上升，验证集loss保持基本不变，为什么
