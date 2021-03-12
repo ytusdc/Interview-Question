@@ -210,17 +210,18 @@ Faster-rcnn 相关
     
   -- SSD、yolo、Fast RCNN 的区别
   -- Faster RCNN和SSD有啥不同，为啥SSD快？(不做Region Proposal，one-stage的) 
-  -- FPN结构， fpn对于多尺度的目标能比较好的适应
+  -- Fast RCNN、yolo和ssd中正样本怎么确定的   https://blog.csdn.net/xiaotian127/article/details/104661466
+  -- FPN结构，FPN对于多尺度的目标能比较好的原因
   -- YOLOV1~V4系列介绍，以及每一版的改进，优缺点介绍（越细越好）。yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
   -- YOLO中如何通过 K-Means 得到 anchor boxes？
-  -- YOLOv3中bbox坐标回归怎么做的？和Faster R-CNN有什么区别？
+  -- YOLOv3中bbox坐标回归怎么做的？和Faster R-CNN有什么区别？  https://segmentfault.com/a/1190000021794637
   -- YOLOv3中bbox坐标回归中的sigmoid函数有什么用？
   -- YOLOv3中 route层的作用是什么？
   -- yolov2中聚类是怎么做的
   -- Anchor大小、长宽比选取？我说了业界常用的方法(YOLO9000中的方法) ，并提了一个更优的方法
   -- 如果YOLOV3采用Focal loss会怎么样？
   -- YOLOv3在小缺陷检测上也很好，RPN上和two-stage的有什么区别
-  -- yolo跟ssd的损失函数是什么样，有啥缺点，yolo和ssd中正样本怎么确定的 
+  -- yolo跟ssd的损失函数是什么样，有啥缺点，
   -- YOLOv4相较于YOLOv3有哪些改进？速度更快还是更慢，为什么？
   -- YOLOv4和YOLOv5有哪些区别？
 
@@ -268,7 +269,8 @@ Anchor-free 目标检测-----
 网络结构 --
   -- VGG，GoogleNet，ResNet等网络之间的区别是什么？
   -- Inception(V1-V4) 网络结构以及优缺点
-  -- PAnet PSPNet
+  -- PAnet PSPNet   https://www.pianshen.com/article/6550689403/  
+                    https://zhuanlan.zhihu.com/p/110204563
   
 分割：
   -- FCN网络为什么用全卷积层代替全连接层？
