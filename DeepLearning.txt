@@ -56,7 +56,7 @@
 
 5、-- 
 	(1) 精确率，召回率，和准确度评价怎么算，这俩是矛盾的怎么选最优
-	(2) ROC曲线和AUC曲线意义，介绍F1-score, auc比F1好在哪,
+	(2) ROC曲线和AUC曲线意义，ROC曲线上每个点代表的含义， 介绍F1-score, auc比F1好在哪,
 	    AUC原理，为什么更适用于排序问题？
 	(3) auc比F1好在哪-- ROC曲线 vs Precision-Recall曲线，各自的使用场景选择
 	(4) Log Loss 和 AUC 的区别， 适用于什么场景
@@ -67,6 +67,7 @@
 	
 6、--各种激活函数的优缺点
 	(1) 激活函数有什么用？各种激活函数（sigmoid，tanh，ReLU, leaky ReLU, PReLU, ELU （ReLU变体））介绍一下，优缺点及适用场景
+	    --Relu不可导怎么办
 	(3) 深度学习用relu激励函数，为什么，好处是什么
 	(2) 比如sigmod的问题在哪里，relu是怎么解决的，relu的问题在哪里，有没有对应的解决算法(prelu) ，介绍 Leaky Relu 并写公式 leakyrelu解决了梯度消失问题吗
 	(4) relu激励函数训练数据时会让神经元失活，训练之后进行应用时有什么注意的吗，训练时失活的神经元在应用时怎么办
@@ -167,6 +168,7 @@
 	(7) resnetV1-V2 两种结构具体怎么实现
   
 15、- 过拟合、欠拟合(overfitting,underfitting) 的原因及解决方法,解释为什么有效
+      https://blog.csdn.net/weixin_43455338/article/details/104885402
 
 
 16、--数据不平衡
@@ -269,8 +271,13 @@ Anchor-free 目标检测-----
 网络结构 --
   -- VGG，GoogleNet，ResNet等网络之间的区别是什么？
   -- Inception(V1-V4) 网络结构以及优缺点
+
   -- PAnet PSPNet   https://www.pianshen.com/article/6550689403/  
                     https://zhuanlan.zhihu.com/p/110204563
+
+  -- Unet, Unet 变体  https://blog.csdn.net/sinat_17456165/article/details/106132558
+  -- 卷积神经网络中的即插即用模块  https://blog.csdn.net/DD_PP_JJ/article/details/106436428
+
   
 分割：
   -- FCN网络为什么用全卷积层代替全连接层？
