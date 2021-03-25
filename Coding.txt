@@ -80,6 +80,7 @@
 - 给两个有序数组，求第K大的数（第k大）
 - 算法：数组求第k小数字的下标
 - 寻找两个有序数组的中位数（LeetCode04），思路按照求第K小的思路实现
+- 寻找数组中的中位数，不能排序（用最大堆加最小堆可解决） 剑指 Offer 41
 https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xun-zhao-liang-ge-you-xu-shu-zu-de-zhong-wei-s-114/
 https://zhuanlan.zhihu.com/p/67542731
 
@@ -119,7 +120,7 @@ https://www.jianshu.com/p/14e003748ca2
 - 判断一个数是否是素数？
 
 
-- 连续子数组的最大和
+- 数组最大连续子数组和
 - 子数组的最大累加和问题
 - 二维数组找最小（大）路径和
 - 最长递增子序列，dp实现

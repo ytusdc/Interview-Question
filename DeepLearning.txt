@@ -16,8 +16,6 @@
 	(5)  CNN 模型所需的计算力（flops）和参数（parameters）数量是怎么计算的？
 	
 
-
-	
 	
 3、-- 卷积相关
    	(1) 1 * 1卷积核的作用，哪些情况可以使用1x1卷积？
@@ -38,9 +36,11 @@
 	
 	上采样、下采样还有哪些类型
     upsample 上采样方法(语义分割)
+	
 	1、up-sampling--（Billnear intrpolation双线性插值）， 临近插值
     2、Transpose Conv （反卷积）
     3、Up-Pooling
+	-介绍常见的插值算法
 
  
 	
@@ -167,8 +167,12 @@
 	(6) ResNet如何解决梯度消失？公式写一下
 	(7) resnetV1-V2 两种结构具体怎么实现
   
-15、- 过拟合、欠拟合(overfitting,underfitting) 的原因及解决方法,解释为什么有效
-      https://blog.csdn.net/weixin_43455338/article/details/104885402
+15、
+
+    - 如何判断过拟合，以及解决方法
+    - 过拟合、欠拟合(overfitting,underfitting) 的原因及解决方法,解释为什么有效 
+     	https://blog.csdn.net/weixin_43455338/article/details/104885402
+	- BN 不能彻底解决过拟合的原因 --- https://www.zhihu.com/question/275788133
 
 
 16、--数据不平衡
@@ -198,23 +202,26 @@
 
 Faster-rcnn 相关
 
-    (1) RCNN系列模型的区别， Faster R-CNN网络做了哪些改进/优化
-   	(2) 项目中使用Faster rcnn，请问Faster rcnn的优势是什么，为什么在这个项目使用Faster rcnn
-   	(3) Faster-rcnn RPN的作用和原理，RPN怎么计算 box 的实际坐标
-	(4) 原始图片中的RoI如何映射到到feature map？    https://zhuanlan.zhihu.com/p/24780433
-   	(5) ROI pooling 的主要作用是什么（图片不同尺寸输入）？
-	    RoI Pooling和RoI Align区别, 顺便介绍三种图像插值方法
-   	(6) Faster rcnn anchor机制，分别说一下 RPN阶段两种Loss分别是什么？
-   	(7) faster-rcnn 损失函数，优化函数
-   	(8) Faster-rcnn有什么不足的地方吗？如何改进？faster-rcnn怎么优化
-    (9) 为什么回归损失中用smooth L1 (faster-rcnn) 
+  -- RCNN系列模型的区别， Faster R-CNN网络做了哪些改进/优化
+  -- 项目中使用Faster rcnn，请问Faster rcnn的优势是什么，为什么在这个项目使用Faster rcnn
+  -- Faster-rcnn RPN的作用和原理，RPN怎么计算 box 的实际坐标
+  -- 原始图片中的RoI如何映射到到feature map？    https://zhuanlan.zhihu.com/p/24780433
+  -- ROI pooling 的主要作用是什么（图片不同尺寸输入）？
+	 RoI Pooling和RoI Align区别, 顺便介绍三种图像插值方法
+  -- Faster rcnn anchor机制，分别说一下 RPN阶段两种Loss分别是什么？
+  -- 如何从rpn网络生成的多个候选框中确定出目标候选框
+  -- Faster-rcnn有什么不足的地方吗？如何改进？faster-rcnn怎么优化
+  -- faster-rcnn 损失函数，优化函数，为什么回归损失中用smooth L1 (faster-rcnn) 
+  -- Faster R-CNN 训练和测试的流程有什么不一样
 
     
   -- SSD、yolo、Fast RCNN 的区别
   -- Faster RCNN和SSD有啥不同，为啥SSD快？(不做Region Proposal，one-stage的) 
   -- Fast RCNN、yolo和ssd中正样本怎么确定的   https://blog.csdn.net/xiaotian127/article/details/104661466
+  -- YOLO的损失函数
   -- FPN结构，FPN对于多尺度的目标能比较好的原因
-  -- YOLOV1~V4系列介绍，以及每一版的改进，优缺点介绍（越细越好）。yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
+  -- YOLOV1~V4系列介绍，以及每一版的改进，优缺点介绍（越细越好）。
+  -- yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
   -- YOLO中如何通过 K-Means 得到 anchor boxes？
   -- YOLOv3中bbox坐标回归怎么做的？和Faster R-CNN有什么区别？  https://segmentfault.com/a/1190000021794637
   -- YOLOv3中bbox坐标回归中的sigmoid函数有什么用？
@@ -224,7 +231,7 @@ Faster-rcnn 相关
   -- 如果YOLOV3采用Focal loss会怎么样？
   -- YOLOv3在小缺陷检测上也很好，RPN上和two-stage的有什么区别
   -- yolo跟ssd的损失函数是什么样，有啥缺点，
-  -- YOLOv4相较于YOLOv3有哪些改进？速度更快还是更慢，为什么？
+  -- YOLOv4用到哪些优化方法？https://blog.csdn.net/wonengguwozai/article/details/106784642
   -- YOLOv4和YOLOv5有哪些区别？
 
 
