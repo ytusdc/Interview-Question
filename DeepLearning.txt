@@ -331,6 +331,9 @@ Anchor-free 目标检测-----
 自注意力机制， Attention-----
   -- 介绍自注意力机制
   -- 介绍SENet中的注意力机制 --  Channel Attention
+  -- 这里SEnet 采用sigmoid而不是softmax 为什么
+     1、它要可以学习到各个channel之间的非线性关系 2、学习的关系不是互斥的，因为这里允许多channel特征，而不是one-hot形式。
+	 
   -- 介绍CV方向上的注意力网络
   -- Attention对比RNN和CNN，分别有哪点你觉得的优势
   -- 写出Attention的公式
