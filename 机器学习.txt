@@ -5,6 +5,9 @@
 --梯度下降手推
 
 
+问lr 与softmax的区别
+softmax 减去 最大数字不变的证明
+
 https://www.zhihu.com/question/29385169
 -- LR (逻辑回归)
  - LR明明是分类模型为什么叫回归

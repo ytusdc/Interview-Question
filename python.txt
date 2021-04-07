@@ -12,7 +12,7 @@ https://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.ht
 9、list和tuple各自的优势，tuple和list的区别（只读和读写），元祖和字典遍历
     Python中 List 函数的底层代码怎么实现的？
 10、介绍一下python中闭包的作用
-11、Python的多线程和多进程，Python伪多线程，那什么时候应该用它？
+11、Python的多线程和多进程，Python伪多线程，那什么时候应该用它？  Python多进程怎么实现
 12、readline和readlines的区别
 13、tensorflow while_loop和python for循环的区别，什么情况下for更优？（while loop的循环次数不确定的情况下效率低，因为要不断重新建图）
 14、列表去重，字典排序
