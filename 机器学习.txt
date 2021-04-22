@@ -21,7 +21,9 @@ https://www.zhihu.com/question/29385169
   - LR介绍、LR对特征需要做什么特殊处理吗？类别特征、连续特征。
   - 逻辑回归的目标函数(损失函数)是凸函数吗？
   - Lr和决策树做分类优缺点，和对比
-  -  LR的梯度下降有几种优化器？
+  - LR的梯度下降有几种优化器？
+  - Lr多分类的目标函数是什么？  Lr在二分类中用到了sigmoid函数，多分类中是softmax函数，当softmax函数用于二分类问题的时候，这两个的区别？
+  直接用Softmax函数进行多分类和用sigmoid的函数二分类组合进行多分类的区别，各自适用于怎么样的场景？
   
 
 -- SVM 
@@ -86,7 +88,8 @@ https://www.zhihu.com/question/29385169
 
 
 
---介绍KNN和K-means
+--介绍KNN和K-means有什么区别？  https://www.cnblogs.com/peizhe123/p/4619066.html
+--k-means的k值该如何确定？
 -- Kmeans的缺点？如何改善？
 -- 讲一下K-means算法的过程以及原理
 -- 手写K-means算法
