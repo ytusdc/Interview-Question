@@ -57,7 +57,7 @@
 5、-- 
 	(1) 精确率，召回率，和准确度评价怎么算，这俩是矛盾的怎么选最优
 	(2) ROC曲线和AUC曲线意义，ROC曲线上每个点代表的含义， 介绍F1-score, auc比F1好在哪,
-	    AUC原理，为什么更适用于排序问题？
+	    AUC原理，为什么更适用于排序问题？  AUC怎么算的？ROC曲线怎么画的
 	(3) auc比F1好在哪-- ROC曲线 vs Precision-Recall曲线，各自的使用场景选择
 	(4) Log Loss 和 AUC 的区别， 适用于什么场景
 	(5) 分类、检测、分割评价指标说一下？
@@ -346,6 +346,7 @@ Anchor-free 目标检测-----
   -- 为什么self-attention可以替代seq2seq
   -- Attention里面的QKV都是什么，怎么计算的
   -- 为什么Transformer中很少使用激活函数？
+  Transformer相比CNN的优势
 介绍BERT/Transformer原理，结构
 transformer中的Q,K,V到底是什么？
 介绍视觉Transformer及代表性网络
@@ -354,6 +355,11 @@ Transformer中的Position Embedding是怎么实现的？为什么？
 bert对小样本学习fine-tune的时候有什么优化方法
 手写Transformer
 Transformer 中的 positional embedding  https://zhuanlan.zhihu.com/p/359366717
+
+介绍EfficientNet
+RNN为什么不能解决长期依赖的问题？
+
+
 
 
 了解维度爆炸吗
@@ -379,6 +385,7 @@ pytorch 多卡训练 同步还是异步
   -- 零样本分类问题。如果测试时出现一个图片是训练时没有的类别，怎么做
   --  介绍你知道的调参tricks  https://www.zhihu.com/question/41631631
   
+
 
 
 code 编程
