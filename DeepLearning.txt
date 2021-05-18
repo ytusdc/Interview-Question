@@ -327,7 +327,9 @@ Anchor-free 目标检测-----
  
 
   -- 介绍有监督、自监督和半监督
-
+  
+  
+ 
 自注意力机制， Attention-----
   -- 介绍自注意力机制
   -- 介绍SENet中的注意力机制 --  Channel Attention
@@ -339,22 +341,10 @@ Anchor-free 目标检测-----
   -- 写出Attention的公式
   -- Attention机制，里面的q,k,v分别代表什么
   -- 谈谈 Soft Attention，Attention 中需要先线性变换么？  
-
-
   
   -- 写一下Self-attention公式，Attention机制
   -- 为什么self-attention可以替代seq2seq
   -- Attention里面的QKV都是什么，怎么计算的
-  -- 为什么Transformer中很少使用激活函数？
-  Transformer相比CNN的优势
-介绍BERT/Transformer原理，结构
-transformer中的Q,K,V到底是什么？
-介绍视觉Transformer及代表性网络
-Transformer中的Scaled Dot-Product Attention为什么要缩放（两点）。
-Transformer中的Position Embedding是怎么实现的？为什么？
-bert对小样本学习fine-tune的时候有什么优化方法
-手写Transformer
-Transformer 中的 positional embedding  https://zhuanlan.zhihu.com/p/359366717
 
 介绍EfficientNet
 RNN为什么不能解决长期依赖的问题？
