@@ -1,4 +1,4 @@
-#深度学习相关
+# 深度学习相关
 ====
 
 卷积输出计算，卷积核参数数量
@@ -7,7 +7,7 @@
 	- 手推梯度反向传播
 	- 介绍熟悉的NASNet网络
 	- 常用的凸优化方法，介绍
-2、CNN
+## 2、CNN
 
 	-- BP 算法手推反向传播，cnn怎么更新w值和反向传播， 手推CNN公式
 	-- BP神经网络的结构是怎样的？和其他神经网络的区别是什么？
@@ -18,7 +18,7 @@
 	-- CNN 模型所需的计算力（flops）和参数（parameters）数量是怎么计算的？
 	
 	
-3、-- 卷积相关
+### 3、-- 卷积相关
 
    	-- 1 * 1卷积核的作用，哪些情况可以使用1x1卷积？
    	-- 3×3 卷积核 与 5×5 卷积核相比的优点，卷积操作是线性的吗？CNN是线性的吗？为什么？
@@ -44,7 +44,7 @@
 	-介绍常见的插值算法
 
 	
-4、--Pool 池化的作用和种类
+#### 4、--Pool 池化的作用和种类
 
 	(1) Max Pooling和 Average Pooling的区别，使用场景分别是什么？
 	(2) 哪些情况用 MaxPool比AveragePool效果好？原因
@@ -212,7 +212,7 @@
 	
 ## 目标检测 + 小目标检测
 
-	-- 目标检测算法中多尺度训练/测试是怎么实现的? 
+	- 目标检测算法中多尺度训练/测试是怎么实现的? 
 	-- bbox目标大小尺寸差异巨大怎么解决？损失函数上怎么设计？
 	-- 介绍一下目标检测中的多尺度训练/测试
     -- 目标检测中如何解决目标尺度大小不一的情况 (图像金字塔，特征金字塔，Inception block)
@@ -223,44 +223,43 @@
     
 18、Faster-rcnn相关
 
-  -- RCNN系列模型的区别， Faster R-CNN网络做了哪些改进/优化
-  
-  -- 项目中使用Faster rcnn，请问Faster rcnn的优势是什么，为什么在这个项目使用Faster rcnn
-  -- Faster-rcnn RPN的作用和原理，RPN怎么计算 box 的实际坐标
-  -- 原始图片中的RoI如何映射到到feature map？    https://zhuanlan.zhihu.com/p/24780433
-  -- ROI pooling 的主要作用是什么（图片不同尺寸输入）？
+    -- RCNN系列模型的区别， Faster R-CNN网络做了哪些改进/优化
+	-- 项目中使用Faster rcnn，请问Faster rcnn的优势是什么，为什么在这个项目使用Faster rcnn
+	-- Faster-rcnn RPN的作用和原理，RPN怎么计算 box 的实际坐标
+	-- 原始图片中的RoI如何映射到到feature map？    https://zhuanlan.zhihu.com/p/24780433
+    -- ROI pooling 的主要作用是什么（图片不同尺寸输入）？
 	 RoI Pooling和RoI Align区别, 顺便介绍三种图像插值方法
-  -- Faster rcnn anchor机制，分别说一下 RPN阶段两种Loss分别是什么？
-  -- 如何从rpn网络生成的多个候选框中确定出目标候选框
-  -- Faster-rcnn有什么不足的地方吗？如何改进？faster-rcnn怎么优化
-  -- faster-rcnn 损失函数，优化函数，为什么回归损失中用smooth L1 (faster-rcnn) 
-  -- Faster R-CNN 训练和测试的流程有什么不一样
-  -- Fast-rcnn的区域候选框是怎么得到的
+    -- Faster rcnn anchor机制，分别说一下 RPN阶段两种Loss分别是什么？
+	-- 如何从rpn网络生成的多个候选框中确定出目标候选框
+    -- Faster-rcnn有什么不足的地方吗？如何改进？faster-rcnn怎么优化
+	-- faster-rcnn 损失函数，优化函数，为什么回归损失中用smooth L1 (faster-rcnn) 
+	-- Faster R-CNN 训练和测试的流程有什么不一样
+	-- Fast-rcnn的区域候选框是怎么得到的
+	-- FPN结构，FPN对于多尺度的目标能比较好的原因    
+	-- SSD、yolo、Fast RCNN 的区别
+	-- Faster RCNN和SSD有啥不同，为啥SSD快？(不做Region Proposal，one-stage的) 
+	-- Fast RCNN、yolo和ssd中正样本怎么确定的   https://blog.csdn.net/xiaotian127/article/details/104661466
+	-- YOLO的损失函数
+	-- YOLO的路由层作用是什么,  ①融合特征②开辟一个新的检测分支
+	-- YOLOV1~V4系列介绍，以及每一版的改进，优缺点介绍（越细越好）。
+	-- yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
+	-- YOLO中如何通过 K-Means 得到 anchor boxes？
+	-- YOLOv3中bbox坐标回归怎么做的？和Faster R-CNN有什么区别？  https://segmentfault.com/a/1190000021794637
+	-- YOLOv3中bbox坐标回归中的sigmoid函数有什么用？
+	-- YOLOv3中 route层的作用是什么？
+	-- yolov2中聚类是怎么做的
+	-- Anchor大小、长宽比选取？我说了业界常用的方法(YOLO9000中的方法) ，并提了一个更优的方法
+	-- 如果YOLOV3采用Focal loss会怎么样？
+	-- YOLOv3在小缺陷检测上也很好，RPN上和two-stage的有什么区别
+	-- yolo跟ssd的损失函数是什么样，有啥缺点，
+	-- YOLOv4用到哪些优化方法？https://blog.csdn.net/wonengguwozai/article/details/106784642
+	-- YOLOv4和YOLOv5有哪些区别？
+	YOLOv4相较于YOLOv3有哪些改进？速度更快还是更慢，为什么？
 
-  -- FPN结构，FPN对于多尺度的目标能比较好的原因    
-  -- SSD、yolo、Fast RCNN 的区别
-  -- Faster RCNN和SSD有啥不同，为啥SSD快？(不做Region Proposal，one-stage的) 
-  -- Fast RCNN、yolo和ssd中正样本怎么确定的   https://blog.csdn.net/xiaotian127/article/details/104661466
-  -- YOLO的损失函数
-  -- YOLO的路由层作用是什么,  ①融合特征②开辟一个新的检测分支
-  -- YOLOV1~V4系列介绍，以及每一版的改进，优缺点介绍（越细越好）。
-  -- yolov3中的anchor怎么生成的, 写出 YOLOv3 的损失函数
-  -- YOLO中如何通过 K-Means 得到 anchor boxes？
-  -- YOLOv3中bbox坐标回归怎么做的？和Faster R-CNN有什么区别？  https://segmentfault.com/a/1190000021794637
-  -- YOLOv3中bbox坐标回归中的sigmoid函数有什么用？
-  -- YOLOv3中 route层的作用是什么？
-  -- yolov2中聚类是怎么做的
-  -- Anchor大小、长宽比选取？我说了业界常用的方法(YOLO9000中的方法) ，并提了一个更优的方法
-  -- 如果YOLOV3采用Focal loss会怎么样？
-  -- YOLOv3在小缺陷检测上也很好，RPN上和two-stage的有什么区别
-  -- yolo跟ssd的损失函数是什么样，有啥缺点，
-  -- YOLOv4用到哪些优化方法？https://blog.csdn.net/wonengguwozai/article/details/106784642
-  -- YOLOv4和YOLOv5有哪些区别？
-   YOLOv4相较于YOLOv3有哪些改进？速度更快还是更慢，为什么？
 
+# ResNet
 
-ResNet
-  -- ResNet相关。描述、介绍特点、介绍为什么效果不会随着深度变差,   
+- ResNet相关。描述、介绍特点、介绍为什么效果不会随着深度变差,   
   -- ResNet解决了什么问题
   -- ResNet为什么能解决梯度消失的问题
   -- 网络退化问题： 训练深层的神经网络，会遇到梯度消失和梯度爆炸（vanishing/exploding gradients）的问题，影响了网络的收敛，但是这很大程度已经被标准初始化（normalized  initialization）和BN（Batch Normalization）所处理。 当深层网络能够开始收敛，会引起网络退化（degradation problem）问题，即随着网络深度增加，准确率会饱和，甚至下降。这种退化不是由过拟合引起的，因为在适当的深度模型中增加更多的层反而会导致更高的训练误差。 ResNet就通过引入深度残差连接来解决网络退化的问题，从而解决深度CNN模型难训练的问题。
