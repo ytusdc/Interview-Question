@@ -1,4 +1,5 @@
-深度学习相关：
+#深度学习相关
+====
 
 卷积输出计算，卷积核参数数量
 
@@ -7,34 +8,32 @@
 	-- 介绍熟悉的NASNet网络
 	-- 常用的凸优化方法，介绍
 2、CNN
-	(1)  BP 算法手推反向传播，cnn怎么更新w值和反向传播， 手推CNN公式
-	(2)  CNN反向传播公式推导，怎么过全联接层、池化层、卷积层
-    (3)  CNN的平移不变性是什么？如何实现的？CNN网络中的不变性理解
-    (4)  CNN是深度深好还是长宽大好
-    (5)  DNN反向传播公式推导
-    (5)  神经网络怎样进行参数初始化？
-	(5)  CNN 模型所需的计算力（flops）和参数（parameters）数量是怎么计算的？
+	-- BP 算法手推反向传播，cnn怎么更新w值和反向传播， 手推CNN公式
+	-- BP神经网络的结构是怎样的？和其他神经网络的区别是什么？
+	-- CNN反向传播公式推导
+    -- CNN的平移不变性是什么？如何实现的？CNN网络中的不变性理解
+    -- CNN是深度深好还是长宽大好
+    -- 神经网络怎样进行参数初始化？
+	-- CNN 模型所需的计算力（flops）和参数（parameters）数量是怎么计算的？
 	
-
 	
 3、-- 卷积相关
-   	(1) 1 * 1卷积核的作用，哪些情况可以使用1x1卷积？
-   	(2) 3×3 卷积核 与 5×5 卷积核相比的优点，卷积操作是线性的吗？CNN是线性的吗？为什么？
-	(3) 感受野的计算，CNN 的感受野受什么影响
-   	(4) 卷积输出计算，卷积核参数数量计算：普通卷积、DW PW卷积计算量推导，计算flops，网络参数量计算
-   	(5) 卷积是降采样过程，怎么从一个小图片回到大图片，尽量不丢失数据(下采样和上采样) 
-   	(6) 实现卷积操作(代码) 
-   	(7) 卷积如何加速
-   	(8) 卷积神经网络的卷积核大小、个数,卷积层数如何确定呢?
-   	(9) 卷积层如何修剪，量化等
-	(10) deformable conv怎么做,具体怎么学的，对偏移有没有什么限制
-	(11) 卷积神经网络的卷积核为什么是方形？为什么是奇数
-   	(12) 空洞卷积及其优点
-	(13) 卷积核大小一般如何设定？为什么
-	(14) 上采样方法，反卷积
-    (15) 反卷积具体怎么实现的？
-	
+   	-- 1 * 1卷积核的作用，哪些情况可以使用1x1卷积？
+   	-- 3×3 卷积核 与 5×5 卷积核相比的优点，卷积操作是线性的吗？CNN是线性的吗？为什么？
+	-- 感受野的计算，CNN 的感受野受什么影响
+   	-- 卷积输出计算，卷积核参数数量计算：普通卷积、DW PW卷积计算量推导，计算flops，网络参数量计算
+   	-- 实现卷积操作(代码) 
+   	-- 卷积神经网络的卷积核大小、个数,卷积层数如何确定呢?
+	-- deformable conv怎么做,具体怎么学的，对偏移有没有什么限制
+	-- 卷积神经网络的卷积核为什么是方形？为什么是奇数
+   	-- 空洞卷积及其优点
+    -- 反卷积具体怎么实现的？
+	-- 卷积如何加速
+	-- 卷积层如何修剪，量化等
 	上采样、下采样还有哪些类型
+	
+	卷积是降采样过程
+	
     upsample 上采样方法(语义分割)
 	
 	1、up-sampling--（Billnear intrpolation双线性插值）， 临近插值
@@ -42,9 +41,8 @@
     3、Up-Pooling
 	-介绍常见的插值算法
 
- 
 	
-4、--池化的作用和种类
+4、--Pool 池化的作用和种类
 	(1) Max Pooling和 Average Pooling的区别，使用场景分别是什么？
 	(2) 哪些情况用 MaxPool比AveragePool效果好？原因
 	(3) pooling怎么反向传播
@@ -54,16 +52,19 @@
 	(7) anchor_bbox如何恢复到原始的大小，写一下推理过程。
 	(8) RoI Pooling的计算过程，写一下推理过程。
 
-5、-- 
-	(1) 精确率，召回率，和准确度评价怎么算，这俩是矛盾的怎么选最优
-	(2) ROC曲线和AUC曲线意义，ROC曲线上每个点代表的含义， 介绍F1-score, auc比F1好在哪,
+5、--模型评估方法
+	-- 精确率，召回率，和准确度评价怎么算，这俩是矛盾的怎么选最优
+    -- ROC曲线和AUC曲线意义，ROC曲线上每个点代表的含义， 介绍F1-score, auc比F1好在哪,
 	    AUC原理，为什么更适用于排序问题？  AUC怎么算的？ROC曲线怎么画的
-	(3) auc比F1好在哪-- ROC曲线 vs Precision-Recall曲线，各自的使用场景选择
-	(4) Log Loss 和 AUC 的区别， 适用于什么场景
-	(5) 分类、检测、分割评价指标说一下？
-	(6) 手写AUC曲面面积的计算(或者伪代码)
-	(7) 混淆矩阵
+	-- auc比F1好在哪-- ROC曲线 vs Precision-Recall曲线，各自的使用场景选择
+	-- Log Loss 和 AUC 的区别， 适用于什么场景
+	-- 分类、检测、分割评价指标说一下？
+	-- 手写AUC曲面面积的计算(或者伪代码)
+	-- 混淆矩阵
 	-- AP和mAP的区别？
+	-- AUC指标有什么特点？放缩结果对AUC是否有影响？
+	-- 余弦距离与欧式距离有什么特点？https://www.zhihu.com/question/19640394
+	-- 什么是偏差和方差
 	
 	
 6、--各种激活函数的优缺点
@@ -100,6 +101,7 @@
     (10)为什么动量可以走出局部最小值？数学解释
     训练时出现loss NAN的可能因素	
 	-- adam用到二阶矩的原理是什么
+	梯度下降与拟牛顿法的异同？
 	
 9、--Softmax 相关
     (1) Softmax的原理是？反向传播、梯度公式推导，代码实现， 手推softmax的BP公式
@@ -120,38 +122,39 @@
 	   (L1范数，使权重为0，对应的特征则不起作用，使特征稀疏稀疏矩阵) 
 	(3) Lasso、线性回归、逻辑回归、l1 l2 正则有什么影响，
 	(4) 理解：L1正则先验分布是Laplace分布，L2正则先验分布是Gaussian分布
-	(5) 口述一下l1参数分布的推导(牛皮) , l1在0处不可导，怎么处理:利用坐标轴下降法或者proximal operator：http://roachsinai.github.io/2016/08/03/1Proximal_Method/
+	(5) 口述一下l1参数分布的推导(牛皮) , l1在0处不可导，怎么处理:利用坐标轴下降法或者proximal operator	：http://roachsinai.github.io/2016/08/03/1Proximal_Method/
 	-- L1是损失函数，有哪些优化方法，能用sgd么？为什么？
 	-- L1是不可导的，真的可以用么？
 	-- L1有什么缺点？
-	
-	
-
 
 11、- Dropout
-	(1) Dropout 的原理。为什么能防止过拟合？代码实现
-	(2) dropout在训练和测试时不同，怎么保证测试结果稳定
-	(3) dropout的随机因子会对结果的损失有影响吗
-	(4) Dropout是失活神经元还是失活连接
-	(5) 直接简化网络和dropout的区别
+	-- Dropout 的原理。为什么能防止过拟合？代码实现
+	-- Dropout 在训练和测试的区别，怎么保证测试结果稳定
+	-- Dropout的随机因子会对结果的损失有影响吗
+	-- Dropout是失活神经元还是失活连接
+	-- 直接简化网络和dropout的区别
+	-- ResNet为什么不用Dropout
+	   https://www.zhihu.com/question/325139089/answer/688743474
 
-12、-- 批归一化Batch Normalization原理
-	(1) BN 层的原理，为什么要加缩放和偏置？ 相关公式，优化过程，优化的是什么，为什么BN有泛化能力的改善. 
-	(2) BN有哪些需要学习的参数, BN前向、后向计算
-	(3) BN 训练，测试区别
-	(4) BN如何在inference是加速
-	(5) 均值和方差，在测试和训练时是怎么获得的, BN在inference的时候用到的mean和var怎么来的：类似于滑动平均
+12、批归一化Batch Normalization原理
+    -- BN 可以防止过拟合么？为什么 
+	BN 层的原理，为什么要加缩放和偏置？ 相关公式，优化过程，优化的是什么，为什么BN有泛化能力的改善. 
+	-- BN有哪些需要学习的参数, BN前向、后向计算
+	-- BN 在训练和测试的区别？  
+	-- BN如何在inference是加速
+	-- 均值和方差，在测试和训练时是怎么获得的, BN在inference的时候用到的mean和var怎么来的：类似于滑动平均
         BN跨卡训练怎么保证相同的mean和var， 问了面试官是SYNC
-	(6) BN、LN、IN、GN原理及适用场景,共性和特性
+	-- BN、LN、IN、GN原理及适用场景,共性和特性
 	   -- BN和GN的区别？各有什么优缺点？
-	(7) 如果数据不是高斯分布，bn后怎么恢复
-	(8) bn的可训练参数 
-	(9) BN和普通的Normalization的区别
-	(10) BN放在激活函数前后有什么区别？
-	(11) BN的gama  labada意义
-	(12) 小batch size的坏处
+	-- 如果数据不是高斯分布，bn后怎么恢复
+	-- bn的可训练参数 
+	-- BN和普通的Normalization的区别
+	-- BN放在激活函数前后有什么区别？
+	-- BN的gama  labada意义
+	-- 小batch size的坏处
 	     BN前向、后向计算
-	(13) ResNet 等模型中，Batch Normalization和Dropout 为什么不同时使用
+	-- ResNet 等模型中，Batch Normalization和Dropout 为什么不同时使用（同Dropout 中问题）
+	dropout和BN 在前向传播和方向传播阶段的区别？
 	
 	
 
@@ -209,6 +212,7 @@
 	-- 如何提高小目标检测？  https://www.cnblogs.com/E-Dreamer-Blogs/p/11442927.html
 	-- 小目标检测有哪些trick
 
+
 Faster-rcnn 相关
 
   -- RCNN系列模型的区别， Faster R-CNN网络做了哪些改进/优化
@@ -243,6 +247,7 @@ Faster-rcnn 相关
   -- yolo跟ssd的损失函数是什么样，有啥缺点，
   -- YOLOv4用到哪些优化方法？https://blog.csdn.net/wonengguwozai/article/details/106784642
   -- YOLOv4和YOLOv5有哪些区别？
+   YOLOv4相较于YOLOv3有哪些改进？速度更快还是更慢，为什么？
 
 
 ResNet
@@ -272,9 +277,11 @@ Fcoal loss
   -- MobileNet v1 v2 介绍和区别，MobileNetV2中1x1卷积作用
   -- MobileNet V2中的Residual结构最先是哪个网络提出来的，MobileNetV2 module的参数量和FLOPs计算
   -- shufflenet 算法题：random_shuffle的实现
-  -- shuffle v1 v2 结构	
+  -- shuffle v1 v2 结构
+  介绍一下组卷积
   -- 深度可分离卷积 原理，为什么降低计算量，口述计算，减少了多少
   -- 为什么mobileNet在理论上速度很快，工程上并没有特别大的提升？先说了卷积源码上的实现，两个超大矩阵相乘，可能是group操作，是一些零散的卷积操作，速度会慢。说应该从内存上去考虑。申请空间？
+  --  MobileNet系列为什么快？
 
    
    
@@ -287,7 +294,7 @@ Anchor-free 目标检测-----
  
 网络结构 --
   -- VGG，GoogleNet，ResNet等网络之间的区别是什么？
-  -- Inception(V1-V4) 网络结构以及优缺点
+  -- 介绍Inception(V1-V4) 网络结构以及优缺点
 
   -- PAnet PSPNet   https://www.pianshen.com/article/6550689403/  
                     https://zhuanlan.zhihu.com/p/110204563
@@ -323,6 +330,7 @@ Anchor-free 目标检测-----
   -- 语义分割的常见Loss及优缺点
   -- 最新的分割网络框架了解吗
   -- 为什么图像分割要先encode，再decode？
+  U-Net神经网络为什么会在医学图像分割表现好？
   
  
 
@@ -332,7 +340,7 @@ Anchor-free 目标检测-----
  
 自注意力机制， Attention-----
   -- 介绍自注意力机制
-  -- 介绍SENet中的注意力机制 --  Channel Attention
+  -- 介绍SENet中的注意力机制 --  Channel Attention  Squeeze-Excitation结构是怎么实现的？
   -- 这里SEnet 采用sigmoid而不是softmax 为什么
      1、它要可以学习到各个channel之间的非线性关系 2、学习的关系不是互斥的，因为这里允许多channel特征，而不是one-hot形式。
 	 
@@ -340,7 +348,7 @@ Anchor-free 目标检测-----
   -- Attention对比RNN和CNN，分别有哪点你觉得的优势
   -- 写出Attention的公式
   -- Attention机制，里面的q,k,v分别代表什么
-  -- 谈谈 Soft Attention，Attention 中需要先线性变换么？  
+  -- 谈谈 Soft Attention，Attention 中需要先线性变换么？ 
   
   -- 写一下Self-attention公式，Attention机制
   -- 为什么self-attention可以替代seq2seq
@@ -382,6 +390,7 @@ code 编程
  -- 卷积底层的实现方式(如caffe里面的img2col) 
  -- 手撕 IoU,NMS, 及其变体 SoftNMS代码, softmax 解决了什么问题。soft nms的具体过程
  -- 写一下mAP公式
+ -- 如何计算 mIoU？
  -- 解释mAP，具体怎么计算？
  -- nms很耗时吗？ 时间复杂度？ 一般预测时会有多少个候选框？
  -- numpy实现交叉熵
