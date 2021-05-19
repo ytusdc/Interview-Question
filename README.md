@@ -28,6 +28,7 @@
 
 
 18、Faster-rcnn相关
+
     - RCNN系列模型的区别， Faster R-CNN网络做了哪些改进/优化
     - 项目中使用Faster rcnn，请问Faster rcnn的优势是什么，为什么在这个项目使用Faster rcnn
     - Faster-rcnn RPN的作用和原理，RPN怎么计算 box 的实际坐标
