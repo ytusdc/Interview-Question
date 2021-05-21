@@ -1,7 +1,4 @@
 # 深度学习相关
-====
-
-卷积输出计算，卷积核参数数量
 
 ## 1、CNN 相关
 
@@ -10,65 +7,76 @@
   - CNN的平移不变性是什么？如何实现的？CNN网络中的不变性理解
   - CNN是深度深好还是长宽大好
   - 神经网络怎样进行参数初始化？
-  - CNN 模型所需的计算力（flops）和参数（parameters）数量是怎么计算的？
 	
 	
 ## 2、卷积相关
 
   - 1 * 1卷积核的作用，哪些情况可以使用1x1卷积？
-  - 3×3 卷积核 与 5×5 卷积核相比的优点，卷积操作是线性的吗？CNN是线性的吗？为什么？
+  - 3×3 卷积核 与 5×5 卷积核相比的优点？
   - 感受野的计算，CNN 的感受野受什么影响
-  - 卷积输出计算，卷积核参数数量计算：普通卷积、DW PW卷积计算量推导，计算flops，网络参数量计算
+  - CNN 网络模型的计算力（flops）和参数量（parameters）：普通卷积、DW PW 卷积计算量推导
   - 实现卷积操作(代码) 
   - 卷积神经网络的卷积核大小、个数,卷积层数如何确定呢?
-  - deformable conv怎么做,具体怎么学的，对偏移有没有什么限制
   - 卷积神经网络的卷积核为什么是方形？为什么是奇数
   - 空洞卷积及其优点
-  - 反卷积具体怎么实现的？
+   > 串联会产生Griding Efect 网格效应（棋盘格效应）
+  - deformable conv怎么做,具体怎么学的，对偏移有没有什么限制
   - 卷积如何加速
   - 卷积层如何修剪，量化等
   
   
-   - 上采样、下采样还有哪些类型
+  - 上采样、下采样还有哪些类型
      卷积是降采样过程
 	- upsample 上采样方法(语义分割)
 	
 	1、up-sampling--（Billnear intrpolation双线性插值）， 临近插值
-    2、Transpose Conv （反卷积）
+     > 介绍常见的插值算法
+    2、Transpose Conv （反卷积）反卷积具体怎么实现的？
     3、Up-Pooling
-	-介绍常见的插值算法
+
 	
 ## 3、Pool 池化的作用和种类
 
   - Max Pooling和 Average Pooling的区别，使用场景分别是什么？
-  - 哪些情况用 MaxPool比AveragePool效果好？原因
-  - pooling怎么反向传播
-  - RoI Pooling和RoI Align区别,  RoI Pooling 哪些操作导致其精度没有RoI Align高	
   - 当出现一个大噪点时，用哪种池化更好
-  - 除了池化层还有什么方法可以减少特征数量(这里他提到了UNet模型，之前有看过，就说出来了，是采样的方法) 
-  - anchor_bbox如何恢复到原始的大小，写一下推理过程。
-  - RoI Pooling的计算过程，写一下推理过程。
+  - Pooling怎么反向传播
+  - 除了池化层还有什么方法可以减少特征数量(UNet模型，是采样的方法) 
+  - RoI Pooling和RoI Align区别,  RoI Pooling 哪些操作导致其精度没有RoI Align高	
+  - RoI Pooling的计算过程，写一下推理过程
 
 ## 4、模型评估方法
 
   - 精确率，召回率，和准确度评价怎么算，这俩是矛盾的怎么选最优
-  - ROC曲线和AUC曲线意义，ROC曲线上每个点代表的含义， 介绍F1-score, auc比F1好在哪,
+  - ROC曲线和AUC曲线意义，ROC曲线上每个点代表的含义
 	    AUC原理，为什么更适用于排序问题？  AUC怎么算的？ROC曲线怎么画的
-  - auc比F1好在哪-- ROC曲线 vs Precision-Recall曲线，各自的使用场景选择
+  - 介绍F1-score, auc比F1好在哪-- ROC曲线 vs Precision-Recall曲线，各自的使用场景选择
   - Log Loss 和 AUC 的区别， 适用于什么场景
   - 分类、检测、分割评价指标说一下？
   - 手写AUC曲面面积的计算(或者伪代码)
   - 混淆矩阵
   - AP和mAP的区别？
-  - AUC指标有什么特点？放缩结果对AUC是否有影响？
   - 余弦距离与欧式距离有什么特点？https://www.zhihu.com/question/19640394
   - 什么是偏差和方差
+
+
+## 5、正则化方法 L1、L2
+
+  - L0、L1、L2定义，L1，L2正则化原理，从参数分布和参数图上解释
+  - L1，L2 norm的区别，L1为什么能使特征稀疏，L2为什么不能使特征稀疏，L2为什么能解决(或者减轻) 过拟合
+   > (L1范数，使权重为0，对应的特征则不起作用，使特征稀疏稀疏矩阵) 
+  - Lasso、线性回归、逻辑回归、l1 l2 正则有什么影响，
+  - 理解：L1正则先验分布是Laplace分布，L2正则先验分布是Gaussian分布
+  - 口述一下 L1参数分布的推导(牛皮) , L1在0处不可导，怎么处理:利用坐标轴下降法或者proximal operator  
+     http://roachsinai.github.io/2016/08/03/1Proximal_Method/
+  - L1是损失函数，有哪些优化方法，能用sgd么？为什么？
+  - L1是不可导的，真的可以用么？
+  - L1有什么缺点？
+
 	
-	
-## 5、各种激活函数的优缺点
+## 6、各种激活函数的优缺点
 
   - 激活函数有什么用？各种激活函数（sigmoid，tanh，ReLU, leaky ReLU, PReLU, ELU （ReLU变体））介绍一下，优缺点及适用场景
-	    --Relu不可导怎么办
+  - Relu不可导怎么办
   - 深度学习用relu激励函数，为什么，好处是什么
   - 比如sigmod的问题在哪里，relu是怎么解决的，relu的问题在哪里，有没有对应的解决算法(prelu) ，介绍 Leaky Relu 并写公式 leakyrelu解决了梯度消失问题吗
   - relu激励函数训练数据时会让神经元失活，训练之后进行应用时有什么注意的吗，训练时失活的神经元在应用时怎么办
@@ -76,7 +84,7 @@
 	--  sigmoid优点，为什么用在最后一层
 
 
-## 6、深度学习常用的optimizer(优化器) 
+## 7、深度学习常用的optimizer(优化器) 
 
   - 介绍一下你经常用的optimize
   - 手推梯度反向传播
@@ -93,7 +101,7 @@
   - adam用到二阶矩的原理是什么
 
 
-## 7、损失函数(Loss) 
+## 8、损失函数(Loss) 
 
   - 常用的 Loss 函数 (MSE /huber loss/BCE/cross entropy/指数损失/smooth l1 )  
   - cross entropy的原理是什么？反向传播机制是什么？交叉熵的公式伪代码
@@ -107,9 +115,7 @@
 	
 	
 	
-
-	
-## 8、Softmax 相关
+## 9、Softmax 相关
 
   - Softmax的原理是？反向传播、梯度公式推导，代码实现， 手推softmax的BP公式
   - 为什么softmax是指数形式
@@ -121,19 +127,6 @@
   - One-hot有什么作用？
   - 交叉熵和最大似然估计的关系推导）
 	
-	
-
-## 9、正则化方法有哪些
-
-  - L0、L1、L2定义，L1，L2正则化原理，从参数分布和参数图上解释
-  - L1，L2 norm的区别，L1为什么能使特征稀疏，L2为什么不能使特征稀疏，L2为什么能解决(或者减轻) 过拟合
-    > (L1范数，使权重为0，对应的特征则不起作用，使特征稀疏稀疏矩阵) 
-  - Lasso、线性回归、逻辑回归、l1 l2 正则有什么影响，
-  - 理解：L1正则先验分布是Laplace分布，L2正则先验分布是Gaussian分布
-  - 口述一下l1参数分布的推导(牛皮) , l1在0处不可导，怎么处理:利用坐标轴下降法或者proximal operator	：http://roachsinai.github.io/2016/08/03/1Proximal_Method/
-  - L1是损失函数，有哪些优化方法，能用sgd么？为什么？
-  - L1是不可导的，真的可以用么？
-  - L1有什么缺点？
 
 ## 10、Dropout
 
@@ -226,9 +219,14 @@
   - Faster-rcnn RPN的作用和原理，RPN怎么计算 box 的实际坐标
   - 原始图片中的RoI如何映射到到feature map？    https://zhuanlan.zhihu.com/p/24780433
 
+  
+  - 目标检测之Loss：Faster-RCNN中的Smooth L1 Loss ：https://blog.csdn.net/ytusdc/article/details/86301859
 
-  - ROI pooling 的主要作用是什么（图片不同尺寸输入）？
+  - 为什么Faster-rcnn、SSD中使用Smooth L1 Loss 而不用Smooth L2 Loss ：https://blog.csdn.net/ytusdc/article/details/86659696
+
+
   - RoI Pooling和RoI Align区别, 顺便介绍三种图像插值方法
+  - anchor_bbox如何恢复到原始的大小，写一下推理过程 
   - Faster rcnn anchor机制，分别说一下 RPN阶段两种Loss分别是什么？
   - 如何从rpn网络生成的多个候选框中确定出目标候选框
   - Faster-rcnn有什么不足的地方吗？如何改进？faster-rcnn怎么优化
