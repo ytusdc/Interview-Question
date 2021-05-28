@@ -1,3 +1,4 @@
+- 生成模型和判别模型的区别  - https://www.cnblogs.com/zjuhaohaoxuexi/p/11806773.html
 -- 线性回归
   - 使用线性回归的时候什么时候会需要用L2？
   - 线性回归的原理, 距离怎么求, 方程参数怎么出来的
@@ -24,6 +25,7 @@
 
 -- SVM 
   - 手推 SVM
+  - SVM的超平面是什么？ https://blog.csdn.net/wangxiaai/article/details/81632882
   - SVM 的目标函数， 其中的软间隔和硬间隔是什么
   - 软间隔加入的松弛变量是如何求解出来的？
   - SVM 为什么叫支持向量机、损失函数是什么、核函数，怎么解决的线性不可分问题？
@@ -36,8 +38,9 @@
   - 讲一下SMO算法
   - SVM 需不需要做 normalization
   - SVM的KTT条件？说了说，说到SMO实在说不下去了
-  - SVM有哪些核函数？
+  - 为什么SVM要引入核函数？
   - SVM引入核函数本质？
+  - SVM有哪些核函数？
   - 解释下支持向量机对偶算子的用法
   - 支持向量机的基础思路，支持向量机的损失函数，了解支持向量机的核函数吗？核函数需要满足什么样的条件？核函数怎么进行构造？  
   
@@ -86,7 +89,8 @@
 
 
 
---介绍KNN和K-means
+--介绍KNN和K-means有什么区别？  https://www.cnblogs.com/peizhe123/p/4619066.html
+--k-means的k值该如何确定？
 -- Kmeans的缺点？如何改善？
 -- 讲一下K-means算法的过程以及原理
 -- 手写K-means算法
