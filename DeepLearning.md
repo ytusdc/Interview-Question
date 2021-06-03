@@ -96,11 +96,12 @@
   - 为什么动量可以走出局部最小值？数学解释
   - 训练时出现loss NAN的可能因素	
   - adam用到二阶矩的原理是什么
+  - 各个优化器的参数怎么设置
 
 
 ## 8、损失函数(Loss) 
 
-  - 常用的 Loss 函数 (MSE /huber loss/BCE/cross entropy/指数损失/smooth l1 )  
+  - 常用的 Loss 函数 (MSE /huber loss/BCE/cross entropy/指数损失/smooth l1 /softmax loss )  
   - cross entropy的原理是什么？反向传播机制是什么？交叉熵的公式伪代码
   - 为什么分类用交叉熵而不用MSE(均方误差)，同为什么使用交叉熵作为损失函数去评估误差
   - 为什么损失函数用交叉熵
@@ -304,7 +305,7 @@
   - 卷积神经网络中的即插即用模块  https://blog.csdn.net/DD_PP_JJ/article/details/106436428
 
   
-分割：
+## 分割：
   - FCN网络为什么用全卷积层代替全连接层？
   - deeplab v3如何改进，训练过程
   - 说一下deeplab。它与其他state of art的模型对比
@@ -339,12 +340,12 @@
   
   
  
-自注意力机制， Attention-----
+## 自注意力机制， Attention-----
   - 介绍自注意力机制
   - 介绍SENet中的注意力机制 --  Channel Attention  Squeeze-Excitation结构是怎么实现的？
   - 这里SEnet 采用sigmoid而不是softmax 为什么
      1、它要可以学习到各个channel之间的非线性关系 2、学习的关系不是互斥的，因为这里允许多channel特征，而不是one-hot形式。
-	 
+  - Soft Attention 和 Hard Attention
   - 介绍CV方向上的注意力网络
   - Attention对比RNN和CNN，分别有哪点你觉得的优势
   - 写出Attention的公式
@@ -364,7 +365,7 @@
  - 神经网络节点太多如何加快计算？
  - LSTM为什么能解决梯度消失/爆炸的问题
 
-
+  余弦相似度距离和欧氏距离的区别， 你知道其他距离度量公式啊？
 - 训练深度学习网络时候，出现Nan是什么原因，怎么才能避免？
 - 如何解决训练集和测试集的分布差距过大问题？
 - pytorch 多卡训练 同步还是异步
